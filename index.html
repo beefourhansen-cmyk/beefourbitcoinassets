@@ -137,11 +137,24 @@
 
     .hero { padding: 72px 0 42px; position: relative; }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.35fr;
-      align-items: center;
-      gap: 48px;
+    .hero-content {
+      max-width: 840px;
+      margin: 0 auto 54px;
+      text-align: center;
+    }
+
+    .hero-content .eyebrow {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-content .actions {
+      justify-content: center;
+    }
+
+    .hero-content .stats {
+      max-width: 540px;
+      margin: 36px auto 0;
     }
 
     .eyebrow {
@@ -160,11 +173,11 @@
       margin-bottom: 22px;
     }
 
-    h1, h2, h3 { font-family: var(--display); line-height: 1.02; }
+    h1, h2, h3 { font-family: var(--display); line-height: 1.05; }
     h1 {
-      font-size: clamp(3.2rem, 8vw, 7.8rem);
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
       margin: 0;
-      letter-spacing: -0.055em;
+      letter-spacing: -0.04em;
       text-transform: uppercase;
     }
 
@@ -177,8 +190,8 @@
     }
 
     .hero-copy {
-      margin: 24px 0 0;
-      max-width: 560px;
+      margin: 24px auto 0;
+      max-width: 680px;
       color: var(--muted);
       font-size: clamp(1.05rem, 2vw, 1.25rem);
     }
@@ -220,11 +233,17 @@
     .stat b { display: block; color: var(--gold); font-size: 1.1rem; }
     .stat span { color: var(--soft); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; }
 
+    .feature-row-container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
     .feature-frame {
       position: relative;
       border-radius: 34px;
       padding: 10px;
-      background: linear-gradient(135deg, rgba(255, 238, 167, 0.9), rgba(248, 200, 78, 0.28), rgba(81, 47, 3, 0.65));
+      background: linear-gradient(135deg, rgba(255, 238, 167, 0.4), rgba(248, 200, 78, 0.15), rgba(81, 47, 3, 0.35));
       box-shadow: var(--glow);
     }
 
@@ -233,12 +252,13 @@
       position: absolute;
       inset: -26px;
       z-index: -1;
-      background: radial-gradient(circle at 52% 40%, rgba(248, 200, 78, 0.2), transparent 60%);
-      filter: blur(6px);
+      background: radial-gradient(circle at 50% 50%, rgba(248, 200, 78, 0.25), transparent 70%);
+      filter: blur(12px);
     }
 
     .feature-frame img {
       width: 100%;
+      height: auto;
       border-radius: 26px;
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
@@ -250,7 +270,7 @@
       gap: 16px;
       color: var(--soft);
       font-size: 12px;
-      margin: 12px 6px 0;
+      margin: 14px 6px 0;
     }
 
     section { padding: 74px 0; }
@@ -423,7 +443,7 @@
     .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
 
     @media (max-width: 920px) {
-      .hero-grid, .swarm-wrap, .legal-grid, .cta, .hive-pass-card { grid-template-columns: 1fr; }
+      .swarm-wrap, .legal-grid, .cta, .hive-pass-card { grid-template-columns: 1fr; }
       .feature-cards { grid-template-columns: repeat(2, 1fr); }
       .steps { grid-template-columns: 1fr; }
       .nav-links { display: none; }
@@ -469,11 +489,13 @@
 
   <main id="top">
     <header class="hero">
-      <div class="shell hero-grid">
-        <div>
+      <div class="shell">
+
+        <div class="hero-content">
           <div class="eyebrow">🐝 Mobile rewards game</div>
-          <h1><span class="gold-text">Stack sats.</span><br />Build wealth.<br />Do good.</h1>
+          <h1><span class="gold-text">Stack sats.</span><br />Build wealth. Do good.</h1>
           <p class="hero-copy"><strong>BeeFour Bitcoin</strong> turns mining into a glossy, bee-powered mobile game: activate bots, collect HoneyBees, earn satoshis, and choose whether to withdraw or give back.</p>
+
           <div class="actions store-badges" aria-label="Download BeeFour Bitcoin">
             <a class="store-badge google-play" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoin" target="_blank" rel="noopener" aria-label="Get it on Google Play">
               <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
@@ -483,16 +505,24 @@
             </span>
             <a class="btn btn-ghost" href="#swarm">Meet the Bots</a>
           </div>
+
           <div class="stats" aria-label="App highlights">
             <div class="stat"><b>Earn Sats</b><span>Real BTC</span></div>
             <div class="stat"><b>HoneyBees</b><span>Collect traits</span></div>
             <div class="stat"><b>Give Back</b><span>Donate rewards</span></div>
           </div>
         </div>
-        <div class="feature-frame" aria-label="Feature graphic preview">
-          <img src="feature_graphic.png" alt="BeeFour Bitcoin feature graphic showing app, Bitcoin honeycomb, bee bot, and gold gaming visuals" />
-          <div class="caption"><span>Feature graphic: upload beside this index file as <strong>feature_graphic.png</strong></span><span>BZZZ MODE: ON</span></div>
+
+        <div class="feature-row-container">
+          <div class="feature-frame" aria-label="Global Swarm Feature Graphic">
+            <img src="feature_graphic.png" alt="BeeFour Bitcoin Global Swarm Feature Graphic showing localized interfaces for Western, German, and Eastern configurations" />
+            <div class="caption">
+              <span>Ecosystem Feature Profile: <strong>feature_graphic.png</strong></span>
+              <span>GLOBAL SWARM STATUS: VERIFIED</span>
+            </div>
+          </div>
         </div>
+
       </div>
     </header>
 
@@ -600,7 +630,7 @@
           </article>
           <article class="panel step">
             <h3>Collect</h3>
-            <p>Mint HoneyBees, chase rare traits, and build a swarm that feels personal.</p>
+            <p>Mine HoneyBees, chase rare traits, and build a swarm that feels personal.</p>
           </article>
           <article class="panel step">
             <h3>Withdraw or Donate</h3>
