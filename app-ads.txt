@@ -10,7 +10,8 @@ google.com, pub-1084340000251033, DIRECT, f08c47fec0942fa0
 facebook.com, 1489924532913383, RESELLER, c3e20eee3f780d68
 fbadmanager.com, 1489924532913383, DIRECT, f223c113d09e74fb
 #Pangle
-pangleglobal.com, 5039520, DIRECT
+pangleglobal.com, 5039520, DIRECT                
+pubmatic.com, 161490, RESELLER, 5d62403b186f2ac
 #Add other networks if applicable
 #Resellers
 152media.info, 152M312, RESELLER
@@ -1381,10 +1382,10 @@ outbrain.com, 0073fa86cff719c752763d2c3ee52c8f00, RESELLER
 outbrain.com, 009003959a5821f830a09d0bc562b43c62, RESELLER
 outbrain.com, 00ab8f68679cc060c8bbc1035e70030614, RESELLER
 outbrain.com,0083474e9e7092cfca87a3deb5c92450b6,RESELLER
-pangleglobal.com, 45779, RESELLER
-pangleglobal.com, 5026198, RESELLER
-pangleglobal.com, 82832, RESELLER
-pangleglobal.com,67894,RESELLER
+pubmatic.com, 45779, RESELLER
+pubmatic.com, 5026198, RESELLER
+pubmatic.com, 82832, RESELLER
+pubmatic.com, 67894,RESELLER
 peak226.com, 12400, RESELLER
 peak226.com, 12900, RESELLER
 peak226.com, 12901, RESELLER
