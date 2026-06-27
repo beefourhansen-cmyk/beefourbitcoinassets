@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maneki-Neko Miner — Beckon Fortune. Earn Bitcoin.</title>
+  <meta name="description" content="Your lucky cat never stops beckoning. Build your shrine, collect omamori charms, and earn real Bitcoin — one lucky paw at a time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --pink:    #F4A7B9;
+      --gold:    #F5A623;
+      --ink:     #1A2433;
+      --surface: rgba(255,255,255,0.08);
+      --border:  rgba(244,167,185,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #0d0d18;
+      color: #f0e8f0;
+      font-family: 'Noto Sans JP', 'Hiragino Sans', -apple-system, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 60px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('webassets/featuregraphic.png') center center / cover no-repeat;
+      filter: brightness(0.6) saturate(1.2);
+      z-index: 0;
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(13,13,24,0.15) 0%,
+        rgba(13,13,24,0.0) 40%,
+        rgba(13,13,24,0.7) 80%,
+        rgba(13,13,24,1.0) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 640px; }
+
+    .hero-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 0 0 2px rgba(245,166,35,0.4), 0 16px 48px rgba(244,167,185,0.3);
+    }
+
+    .hero-jp {
+      font-size: 0.9em;
+      letter-spacing: 4px;
+      color: var(--pink);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(2em, 6vw, 3.2em);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero p {
+      font-size: 1.1em;
+      color: rgba(240,232,240,0.85);
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: #1A2433;
+      font-weight: 900;
+      font-size: 1em;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(245,166,35,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(245,166,35,0.55); }
+
+    .btn-ghost {
+      background: var(--surface);
+      color: #fff;
+      border: 1px solid var(--border);
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+      margin-left: 12px;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.14); }
+
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+    /* ── Sections ── */
+    section { padding: 80px 24px; }
+
+    .container { max-width: 900px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.7em;
+      letter-spacing: 4px;
+      color: var(--pink);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(1.6em, 4vw, 2.2em);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    h2 span { color: var(--gold); }
+
+    .lead { color: rgba(240,232,240,0.7); font-size: 1.05em; max-width: 560px; }
+
+    /* ── Feature image section ── */
+    .feature-scene {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      margin: 40px 0;
+    }
+
+    .feature-scene img {
+      width: 100%;
+      display: block;
+      filter: brightness(0.75) saturate(1.1);
+    }
+
+    .feature-scene-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,13,24,0.9) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 32px;
+    }
+
+    .feature-scene-overlay p {
+      color: rgba(240,232,240,0.85);
+      font-size: 1em;
+      max-width: 400px;
+    }
+
+    /* ── Glass cards ── */
+    .neko-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 700px) {
+      .neko-feature-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .neko-feature-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+      cursor: default;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+    }
+
+    .neko-feature-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(244,167,185,0.25);
+    }
+
+    .neko-feature-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .neko-feature-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 40%,
+        rgba(10,6,20,0.65) 70%,
+        rgba(10,6,20,0.92) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px 16px;
+    }
+
+    .neko-feature-overlay h3 {
+      font-size: 0.95em;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .neko-feature-overlay p {
+      font-size: 0.75em;
+      color: rgba(240,232,240,0.75);
+      line-height: 1.5;
+    }
+
+    /* ── Neko cards ── */
+    .neko-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .neko-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 18px;
+      width: 150px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .neko-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(244,167,185,0.2);
+    }
+
+    .neko-card img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 12px; }
+    .neko-card .name { font-weight: 800; color: #fff; font-size: 0.82em; }
+    .neko-card .tier {
+      color: var(--gold);
+      font-size: 0.7em;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    /* ── Steps ── */
+    .steps { counter-reset: step; display: grid; gap: 20px; margin-top: 40px; }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+
+    .step-num {
+      counter-increment: step;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 900;
+      font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step h3 { font-size: 0.95em; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .step p  { font-size: 0.85em; color: rgba(240,232,240,0.6); }
+
+    /* ── CTA band ── */
+    .cta-band {
+      background: linear-gradient(135deg, #2a1030 0%, #1a0820 50%, #0d1828 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(ellipse, rgba(244,167,185,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-band h2 { position: relative; z-index: 1; }
+    .cta-band p  { position: relative; z-index: 1; color: rgba(240,232,240,0.7); margin: 12px 0 32px; }
+    .cta-band .btn { position: relative; z-index: 1; }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 24px;
+      text-align: center;
+      color: rgba(240,232,240,0.3);
+      font-size: 0.78em;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { color: var(--pink); }
+
+    /* ── Divider ── */
+    .divider {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--pink), var(--gold));
+      border-radius: 2px;
+      margin: 20px 0 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <img class="hero-icon" src="webassets/icon.png" alt="Maneki-Neko Miner">
+      <div class="hero-jp">招き猫マイナー</div>
+      <h1>Beckon Fortune.<br><span>Earn Bitcoin.</span></h1>
+      <p>Your lucky cat never stops beckoning. Build your shrine, collect omamori charms, and earn real Satoshis — one lucky paw at a time.</p>
+      <div class="hero-cta">
+        <a href="https://play.google.com/store/apps/details?id=com.beefour.manekineko">
+          <img src="webassets/preregister.png" alt="Pre-Register on Google Play" style="height: 60px; display: block;">
+        </a>
+        <a class="btn btn-ghost" href="#how-it-works">How It Works</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature scene -->
+  <section style="padding-top: 0; padding-bottom: 0;">
+    <div class="container">
+      <div class="feature-scene">
+        <img src="webassets/featuregraphic.png" alt="Maneki-Neko Miner — shrine scene">
+        <div class="feature-scene-overlay">
+          <p>Activate your shrine, watch your Ryo balance grow in real-time, and unlock your Treasure Box when you're ready to withdraw.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <div class="section-label">Why play</div>
+      <h2>Fortune waits for <span>no one.</span></h2>
+      <div class="divider"></div>
+      <div class="neko-feature-grid">
+        <div class="neko-feature-card">
+          <img src="webassets/t1nekocardstyle.png" alt="Koban Neko">
+          <div class="neko-feature-overlay">
+            <h3>Build Your Shrine</h3>
+            <p>From Koban Neko to Golden Fortune — each cat boosts your Luck Rate and earns Satoshis while you sleep.</p>
+          </div>
+        </div>
+        <div class="neko-feature-card">
+          <img src="webassets/t2nekocardstyle.png" alt="Sakura Neko">
+          <div class="neko-feature-overlay">
+            <h3>Real Bitcoin Earnings</h3>
+            <p>Earnings are small but real. Ad revenue converts to Satoshis, credited straight to your balance.</p>
+          </div>
+        </div>
+        <div class="neko-feature-card">
+          <img src="webassets/t3nekocardstyle.png" alt="Lucky Wave Neko">
+          <div class="neko-feature-overlay">
+            <h3>Mint Omamori Charms</h3>
+            <p>Every activation mints a unique collectible. Common → Uncommon → Rare → Legendary.</p>
+          </div>
+        </div>
+        <div class="neko-feature-card">
+          <img src="webassets/t5nekocardstyle.png" alt="Golden Fortune Neko">
+          <div class="neko-feature-overlay">
+            <h3>Join the Village</h3>
+            <p>Invite friends, share fortune during Matsuri festivals, and earn commissions from your Squad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neko roster -->
+  <section style="background: rgba(255,255,255,0.02); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container" style="text-align: center;">
+      <div class="section-label">Your squad</div>
+      <h2>The Lucky Cat <span>Roster</span></h2>
+      <div class="divider" style="margin: 20px auto 28px;"></div>
+      <p class="lead" style="margin: 0 auto;">From the humble Koban to the legendary Golden Fortune — each cat brings unique power and fortune to your shrine.</p>
+      <div class="neko-grid">
+        <div class="neko-card">
+          <img src="webassets/t1.png" alt="Koban Neko">
+          <div class="name">Koban Neko</div>
+          <div class="tier">Tier 1</div>
+        </div>
+        <div class="neko-card">
+          <img src="webassets/t2.png" alt="Sakura Neko">
+          <div class="name">Sakura Neko</div>
+          <div class="tier">Tier 2</div>
+        </div>
+        <div class="neko-card">
+          <img src="webassets/t3.png" alt="Lucky Wave Neko">
+          <div class="name">Lucky Wave</div>
+          <div class="tier">Tier 3</div>
+        </div>
+        <div class="neko-card">
+          <img src="webassets/t5.png" alt="Emperor Jade Neko">
+          <div class="name">Emperor Jade</div>
+          <div class="tier">Tier 4</div>
+        </div>
+        <div class="neko-card">
+          <img src="webassets/t7.png" alt="Golden Fortune Neko">
+          <div class="name">Golden Fortune</div>
+          <div class="tier">Tier 5</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-label">Getting started</div>
+      <h2>Five steps to <span>fortune.</span></h2>
+      <div class="divider"></div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Activate Your First Neko</h3>
+            <p>Watch a short ad to activate your Koban Neko. Your shrine opens and Ryo starts accumulating immediately.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Expand Your Shrine</h3>
+            <p>Recruit higher-tier cats to multiply your Luck Rate. Each new cat also mints a unique omamori charm.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Collect Your Earnings</h3>
+            <p>Your Ryo balance grows in real-time. Watch it tick up, claim offline earnings when you return.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Open Your Treasure Box</h3>
+            <p>Once you hit the withdrawal threshold, unlock your Treasure Box and send Satoshis to your Lightning wallet.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div>
+            <h3>Invite the Village</h3>
+            <p>Share your Squad code. Earn commissions when your network activates cats during Matsuri festivals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <h2>Your shrine is waiting.</h2>
+    <p>Download free on Android. Your first Koban Neko is ready to beckon.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.beefour.manekineko">
+      <img src="webassets/preregister.png" alt="Pre-Register on Google Play" style="height: 60px; display: block; margin: 0 auto; position: relative; z-index: 1;">
+    </a>
+  </div>
+
+  <footer>
+    <p style="margin-bottom: 8px;">
+      <a href="https://beefourbitcoin.com/manekineko/privacy">Privacy Policy</a> ·
+      <a href="https://beefourbitcoin.com/manekineko/terms">Terms of Use</a> ·
+      <a href="mailto:support@beefourbitcoin.com">Support</a>
+    </p>
+    <p>Lightweight gameplay simulation. No hardware mining. Rewards follow app rules and withdrawal thresholds.</p>
+    <p style="margin-top: 10px;">© 2026 Bee Four Inc. — 招き猫マイナー</p>
+  </footer>
+
+</body>
+</html>
