@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.beefour.cricketcrypto",
+      "sha256_cert_fingerprints":
+        ["6E:0E:1E:56:1A:85:A7:30:50:55:3C:B1:5E:ED:B1:8A:6E:1B:49:37:D1:FB:25:5C:5C:87:24:63:A4:18:BA:B9"]
+    }
+  }
+]
