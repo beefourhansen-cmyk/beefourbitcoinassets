@@ -7,7 +7,7 @@ bidmachine.io,466,DIRECT
 #AdMob
 google.com, pub-1084340000251033, DIRECT, f08c47fec0942fa0
 #Meta-Audience
-facebook.com, 1489924532913383, RESELLER, c3e20eee3f780d68
+facebook.com, 1489924532913383, DIRECT, c3e20eee3f780d68
 fbadmanager.com, 1489924532913383, DIRECT, f223c113d09e74fb
 #Pangle
 pangleglobal.com, 5039520, DIRECT                
