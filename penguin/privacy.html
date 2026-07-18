@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Penguin Protocol</title>
+  <meta name="theme-color" content="#0B1325" />
+  <style>
+    :root {
+      --bg: #090E1A;
+      --cyan: #4CC9F0;
+      --orange: #FF9F1C;
+      --glacier: #E2E8F0;
+      --white: #FFFFFF;
+      --muted: #94A3B8;
+      --soft: #64748B;
+      --line: rgba(76, 201, 240, 0.18);
+      --radius: 26px;
+      --max: 720px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --display: "Trebuchet MS", Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 75% 0%, rgba(76,201,240,0.14), transparent 34rem),
+                  linear-gradient(180deg, #090E1A 0%, #0B1325 44%, #060A14 100%);
+      color: var(--white);
+      font-family: var(--font);
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .shell { width: min(var(--max), calc(100% - 36px)); margin: 0 auto; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 10; backdrop-filter: blur(18px);
+      background: rgba(9,14,26,0.76); border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { min-height: 74px; display: flex; align-items: center; }
+    .brand {
+      display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
+      font-weight: 900; letter-spacing: 0.10em; text-transform: uppercase; color: var(--cyan);
+    }
+
+    main { padding: 50px 0 80px; }
+    h1 { font-family: var(--display); font-size: clamp(28px, 4vw, 40px); font-weight: 900; margin: 0 0 12px; }
+    h2 { color: var(--cyan); font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin: 36px 0 10px; }
+    p, li { color: var(--muted); font-size: 13px; }
+    a { color: var(--cyan); }
+
+    .footer { border-top: 1px solid var(--line); padding: 40px 0 50px; text-align: center; }
+    .footer p { color: var(--soft); font-size: 12px; margin: 6px 0; }
+    .footer a { color: var(--cyan); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="shell nav-inner">
+    <a href="/penguin/" class="brand">🐧 Penguin Protocol</a>
+  </div>
+</header>
+
+<main>
+  <div class="shell">
+    <h1>Privacy Policy</h1>
+    <p><strong>Penguin Protocol</strong> — last updated 2026-07-17</p>
+    <p>Penguin Protocol is a mobile game published by Bee Four Studio. This policy explains what data the app collects and how it is used.</p>
+
+    <h2>No user accounts</h2>
+    <p>Penguin Protocol does not require you to create an account, sign in, or provide any personal information. All game progress is stored locally on your device and is not uploaded to any server.</p>
+
+    <h2>Advertising (Google AdMob)</h2>
+    <p>This app displays advertisements served by Google AdMob. Google AdMob may collect device identifiers (such as the Advertising ID on Android or IDFA on iOS), IP address, and coarse location data for advertising and analytics purposes. This data is collected by Google, not by Bee Four Studio, and is governed by Google's Privacy Policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+    <p>You may be asked for consent to personalized advertising when you first open the app, depending on your region. You can reset your advertising identifier in your device settings at any time.</p>
+
+    <h2>In-app purchases</h2>
+    <p>Purchases are processed by Apple (App Store) or Google (Play Store) and are subject to their respective privacy policies. The app does not see your payment method.</p>
+
+    <h2>Optional analytics</h2>
+    <p>In a future update, the app may optionally use Firebase Analytics to understand how people play. If enabled, Firebase collects de-identified usage data (e.g., session length, features used). You will be notified before any analytics are activated.</p>
+
+    <h2>Data stored on your device</h2>
+    <p>The following is stored locally on your device using AsyncStorage and is never transmitted to any server: your game balance, bot states, card collection, streak progress, transaction history, donation history, and preferences (charity selection, haptics toggle). Uninstalling the app permanently deletes all of this data.</p>
+
+    <h2>Children</h2>
+    <p>This app is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+    <h2>Your rights</h2>
+    <p>Depending on your jurisdiction (including CCPA in California and GDPR in the European Economic Area), you may have the right to access, delete, or opt out of the sale of personal data. Because the app stores all data on your device and does not create accounts, exercising these rights is done through your device settings (e.g., resetting your advertising identifier, uninstalling the app). For any questions, contact us at the address below.</p>
+
+    <h2>Contact</h2>
+    <p>Bee Four Studio<br><a href="mailto:support@beefourbitcoin.com">support@beefourbitcoin.com</a><br><a href="https://www.beefourbitcoin.com/penguin">www.beefourbitcoin.com/penguin</a></p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the updated version will be posted at this URL and the "last updated" date above will be revised.</p>
+  </div>
+</main>
+
+<footer class="footer">
+  <p><strong>Penguin Protocol</strong> · <a href="https://www.beefourbitcoin.com">Bee Four Studio</a></p>
+  <p><a href="/penguin/">Home</a> · <a href="mailto:support@beefourbitcoin.com">support@beefourbitcoin.com</a></p>
+</footer>
+
+</body>
+</html>
