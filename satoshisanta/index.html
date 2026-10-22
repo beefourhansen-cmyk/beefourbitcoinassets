@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Satoshi Santa — Your Sleigh, Your Way. Harness the 12 Reindeer.</title>
+  <meta name="description" content="Satoshi Santa is a handcrafted North Pole sleigh and ornament collection app by Bee Four Inc. Harness 12 reindeer, ignite the Northern Lights, and choose who is Naughty or Nice." />
+  <meta name="theme-color" content="#07131E" />
+  <meta property="og:title" content="Satoshi Santa — Your Sleigh, Your Way" />
+  <meta property="og:description" content="Harness all 12 North Pole reindeer into a synchronized Aurora Borealis flight crescendo." />
+  <meta property="og:image" content="assets/feature-aurora-flight.jpg" />
+  <style>
+    :root {
+      --bg: #07131E;
+      --bg-deep: #040B12;
+      --surface: #0F2233;
+      --card: #0B1A28;
+      --line: #1B364F;
+      --snow: #F4F9FC;
+      --muted: #8EB2CC;
+      --dim: #5E829E;
+      --gold: #FFE066;
+      --amber: #F5B700;
+      --emerald: #2EE59D;
+      --cyan: #38BDF8;
+      --crimson: #C82333;
+      --cranberry: #8B1522;
+      --brass: #D4AF37;
+      /* Clean sans-serif stack matching beefourbitcoin.com + Calibri */
+      --font: Calibri, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --display: "Trebuchet MS", Calibri, Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse 90% 45% at 50% -5%, rgba(46, 229, 157, 0.18), transparent 65%),
+        radial-gradient(ellipse 70% 40% at 85% 15%, rgba(56, 189, 248, 0.15), transparent 60%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 45%, #061522 100%);
+      color: var(--snow);
+      font-family: var(--font);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--display);
+      letter-spacing: -0.01em;
+    }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    /* ── Sticky Navigation ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(4, 11, 18, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1.5px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--snow);
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+    }
+    .brand img {
+      width: 46px;
+      height: 46px;
+      background: transparent;
+      filter: drop-shadow(0 0 10px rgba(245, 183, 0, 0.35));
+    }
+    .brand small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* Official Google Play Pre-Register Button */
+    .gplay-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #000000;
+      color: #FFFFFF;
+      border: 1.5px solid rgba(255, 255, 255, 0.28);
+      border-radius: 10px;
+      padding: 7px 15px;
+      text-decoration: none;
+      transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    }
+    .gplay-badge:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      box-shadow: 0 6px 20px rgba(245, 183, 0, 0.28);
+    }
+    .gplay-badge svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .gplay-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      text-align: left;
+    }
+    .gplay-text small {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      color: #CBD5E1;
+    }
+    .gplay-text strong {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.2px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 14.5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--amber);
+      color: var(--bg-deep);
+      border: 1.5px solid var(--crimson);
+      box-shadow: 3px 3px 0 #000, 0 0 18px rgba(245, 183, 0, 0.35);
+    }
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--snow);
+      border: 1.5px solid var(--line);
+      box-shadow: 3px 3px 0 #000;
+    }
+
+    /* ── Hero Section ── */
+    .hero {
+      padding: 52px 0 36px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(46, 229, 157, 0.12);
+      border: 1px solid rgba(46, 229, 157, 0.45);
+      color: var(--emerald);
+      padding: 6px 15px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 4.8vw, 56px);
+      line-height: 1.08;
+      margin: 16px 0 14px;
+      color: var(--snow);
+      font-weight: 900;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--gold), var(--emerald), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-copy {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 540px;
+      margin-bottom: 24px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .stat-tile {
+      background: rgba(15, 34, 51, 0.8);
+      border: 1.5px solid var(--line);
+      border-radius: 16px;
+      padding: 13px 15px;
+      box-shadow: 3px 3px 0 #000;
+    }
+    .stat-tile b {
+      display: block;
+      color: var(--gold);
+      font-size: 15.5px;
+    }
+    .stat-tile span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* ── Transparent Floating Crest Showcase in Hero ── */
+    .crest-showcase {
+      background: transparent;
+      padding: 10px;
+      text-align: center;
+    }
+    .crest-main-img {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: transparent;
+      filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 26px rgba(46, 229, 157, 0.22));
+      transition: transform 0.3s ease;
+      margin: 0 auto;
+    }
+    .crest-main-img:hover { transform: translateY(-4px) scale(1.015); }
+    .crest-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .crest-thumb-btn {
+      background: rgba(15, 34, 51, 0.75);
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      padding: 7px 12px;
+      color: var(--muted);
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .crest-thumb-btn img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      background: transparent;
+    }
+    .crest-thumb-btn.active {
+      border-color: var(--emerald);
+      color: var(--snow);
+      background: rgba(46, 229, 157, 0.16);
+    }
+
+    /* ── Dual Wide Feature Panorama ── */
+    .panorama-section {
+      padding: 24px 0 44px;
+    }
+    .panorama-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .panorama-card {
+      background: var(--card);
+      border: 2px solid var(--brass);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 #000;
+      position: relative;
+      transition: transform 0.25s;
+    }
+    .panorama-card:hover { transform: translateY(-3px); }
+    .panorama-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 1024 / 500;
+      object-fit: cover;
+    }
+    .panorama-caption {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(4, 11, 18, 0.92);
+      border-top: 1px solid var(--line);
+    }
+    .panorama-caption b {
+      color: var(--gold);
+      font-size: 13.5px;
+    }
+    .panorama-caption span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* ── Section Headers ── */
+    .section {
+      padding: 52px 0;
+    }
+    .section-head {
+      max-width: 720px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+    .kicker {
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .section-head h2 {
+      font-size: clamp(28px, 3.6vw, 40px);
+      margin: 8px 0 10px;
+      color: var(--snow);
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0;
+    }
+
+    /* ── Live Spinning Sleigh Odometer & 12-Reindeer Roster ── */
+    .simulator-box {
+      background: linear-gradient(180deg, #091B2A, #040B12);
+      border: 2px solid var(--brass);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 6px 6px 0 #000, 0 0 40px rgba(245, 183, 0, 0.16);
+      margin-bottom: 34px;
+    }
+    .sim-top {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .sim-closeup {
+      width: 100%;
+      border-radius: 18px;
+      border: 2px solid var(--amber);
+      box-shadow: 0 0 24px rgba(245, 183, 0, 0.3);
+    }
+    .sim-controls h3 {
+      margin: 0 0 6px;
+      font-size: 25px;
+      color: var(--gold);
+    }
+
+    /* Live Mechanical Rolling Odometer Reel Widget */
+    .live-odometer-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #03080E;
+      border: 2px solid var(--brass);
+      border-radius: 16px;
+      padding: 10px 18px;
+      margin: 10px 0 14px;
+      box-shadow: inset 0 4px 12px rgba(0,0,0,0.85), 0 0 22px rgba(245, 183, 0, 0.25);
+    }
+    .odo-bolt {
+      font-size: 22px;
+      color: var(--amber);
+      font-weight: 900;
+    }
+    .odo-digits {
+      display: flex;
+      gap: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .odo-reel {
+      background: linear-gradient(180deg, #020509 0%, #102538 50%, #020509 100%);
+      border: 1px solid rgba(245, 183, 0, 0.4);
+      border-radius: 6px;
+      width: 28px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--gold);
+      text-shadow: 0 0 8px rgba(245, 183, 0, 0.65);
+      transition: transform 0.12s ease, color 0.2s;
+    }
+    .odo-reel.bump {
+      transform: translateY(-2px);
+      color: var(--emerald);
+    }
+    .odo-rate-badge {
+      background: rgba(46, 229, 157, 0.16);
+      border: 1px solid var(--emerald);
+      color: var(--emerald);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .reindeer-pips {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 9px;
+      margin: 14px 0 4px;
+    }
+    .r-pip {
+      background: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 9px 6px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.18s;
+    }
+    .r-pip:hover {
+      border-color: var(--amber);
+      transform: translateY(-2px);
+    }
+    .r-pip.active {
+      background: rgba(46, 229, 157, 0.18);
+      border-color: var(--emerald);
+      box-shadow: 0 0 12px rgba(46, 229, 157, 0.32);
+      transform: translateY(-2px);
+    }
+    .r-pip b {
+      display: block;
+      font-size: 12px;
+      color: var(--snow);
+    }
+    .r-pip small {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* ── 4 Cinematic Wide Banners (Hover-Floating, Non-Clickable, 4 Distinct Scenes) ── */
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .chapter-card {
+      background: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 #000;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .chapter-card:hover {
+      border-color: var(--amber);
+      transform: translateY(-5px);
+    }
+    .chapter-card img {
+      width: 100%;
+      aspect-ratio: 16 / 8;
+      object-fit: cover;
+      display: block;
+    }
+    .chapter-card.transparent-stage {
+      background: transparent;
+      border-color: rgba(212, 175, 55, 0.45);
+    }
+    .chapter-card.transparent-stage img {
+      object-fit: contain;
+      background: transparent;
+      padding: 6px 6px 0;
+    }
+    .chapter-body {
+      padding: 18px 20px;
+      background: var(--surface);
+      flex: 1;
+    }
+    .chapter-tier {
+      color: var(--emerald);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .chapter-body h3 {
+      margin: 5px 0 8px;
+      font-size: 20px;
+      color: var(--snow);
+    }
+    .chapter-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── 4 Vertical Story Posters (9:16 Portrait Art Showcase — Hover Only) ── */
+    .posters-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .poster-card {
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 5px 5px 0 #000;
+      position: relative;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .poster-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+    }
+    .poster-card img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+    }
+    .poster-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 32px 15px 15px;
+      background: linear-gradient(180deg, transparent, rgba(4, 11, 18, 0.96) 55%);
+    }
+    .poster-overlay span {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--amber);
+    }
+    .poster-overlay h4 {
+      margin: 4px 0 5px;
+      font-size: 16px;
+      color: var(--snow);
+    }
+    .poster-overlay p {
+      margin: 0;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* ── All 6 Sister Apps in the Connected BeeFour Universe ── */
+    .universe-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .uni-card {
+      background: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 4px 4px 0 #000;
+      text-decoration: none;
+      color: var(--snow);
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .uni-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+    .uni-card small {
+      color: var(--amber);
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+    .uni-card h3 {
+      margin: 6px 0 6px;
+      font-size: 19px;
+      color: var(--snow);
+    }
+    .uni-card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    .uni-link {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--emerald);
+    }
+
+    /* ── Privacy Policy Anchor Section ── */
+    .privacy-box {
+      background: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 5px 5px 0 #000;
+    }
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .privacy-item {
+      background: var(--bg-deep);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .privacy-item h4 {
+      margin: 0 0 6px;
+      color: var(--gold);
+      font-size: 15.5px;
+    }
+    .privacy-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      border-top: 1.5px solid var(--line);
+      padding: 36px 0 56px;
+      color: var(--dim);
+      font-size: 13.5px;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid, .panorama-grid, .sim-top, .chapters-grid, .privacy-grid, .universe-grid {
+        grid-template-columns: 1fr;
+      }
+      .posters-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .reindeer-pips {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Nav -->
+  <nav class="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top">
+        <img src="assets/icon-father-satoshi.png" alt="Satoshi Santa Crest" />
+        <span><small>Bee Four Inc.</small>Satoshi Santa</span>
+      </a>
+      <div class="nav-links">
+        <a href="#sleigh-odometer">Your Sleigh</a>
+        <a href="#flight-chapters">Flight Stages</a>
+        <a href="#story-posters">What You Do</a>
+        <a href="#universe">BeeFour Universe</a>
+        <a href="#privacy">Privacy Policy</a>
+      </div>
+      <!-- Official Google Play Pre-Register Button -->
+      <a class="gplay-badge" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta" target="_blank" rel="noopener" aria-label="Pre-register on Google Play">
+        <svg viewBox="0 0 512 512" aria-hidden="true">
+          <path fill="#4285F4" d="M48 59.5v393c0 14.2 15.4 23.1 27.7 16l209.6-212.5L75.7 43.5C63.4 36.4 48 45.3 48 59.5z"/>
+          <path fill="#34A853" d="M359.4 181.2L102.9 33.2l182.4 222.8 74.1-74.8z"/>
+          <path fill="#FBBC04" d="M453.7 235.6l-94.3-54.4-74.1 74.8 74.1 74.8 94.3-54.4c18.1-10.5 18.1-30.3 0-40.8z"/>
+          <path fill="#EA4335" d="M102.9 478.8l256.5-148-74.1-74.8-182.4 222.8z"/>
+        </svg>
+        <div class="gplay-text">
+          <small>Pre-Register on</small>
+          <strong>Google Play</strong>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- Hero Section with Transparent Floating 3-Crest Switcher -->
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">12 Reindeer · 1 Mechanical Sleigh Odometer</div>
+          <h1>Harness the team.<br /><span>Ignite the Northern Lights.</span></h1>
+          <p class="hero-copy">
+            <strong>Satoshi Santa</strong> brings the North Pole workshop to life. Wake all
+            <strong>12 reindeer</strong> into harness, spin the carved brass sleigh reels into
+            <strong>Full Aurora Overdrive</strong>, mint rare Snow Globe ornaments, and decide who lands on the Naughty or Nice list.
+          </p>
+          <div class="hero-actions">
+            <a class="gplay-badge" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta" target="_blank" rel="noopener">
+              <svg viewBox="0 0 512 512" aria-hidden="true">
+                <path fill="#4285F4" d="M48 59.5v393c0 14.2 15.4 23.1 27.7 16l209.6-212.5L75.7 43.5C63.4 36.4 48 45.3 48 59.5z"/>
+                <path fill="#34A853" d="M359.4 181.2L102.9 33.2l182.4 222.8 74.1-74.8z"/>
+                <path fill="#FBBC04" d="M453.7 235.6l-94.3-54.4-74.1 74.8 74.1 74.8 94.3-54.4c18.1-10.5 18.1-30.3 0-40.8z"/>
+                <path fill="#EA4335" d="M102.9 478.8l256.5-148-74.1-74.8-182.4 222.8z"/>
+              </svg>
+              <div class="gplay-text">
+                <small>Pre-Register on</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+            <a class="btn btn-ghost" href="#sleigh-odometer">Test the Sleigh Odometer</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-tile">
+              <b>12 Reindeer</b>
+              <span>0 → 12 Flight Crescendo</span>
+            </div>
+            <div class="stat-tile">
+              <b>Snow Globe</b>
+              <span>Mint Rare Holiday Ornaments</span>
+            </div>
+            <div class="stat-tile">
+              <b>Naughty or Nice</b>
+              <span>You Make the List</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Transparent Floating Square Icon Crests -->
+        <div class="crest-showcase">
+          <img
+            id="heroCrestImg"
+            class="crest-main-img"
+            src="assets/icon-father-satoshi.png"
+            alt="Father Satoshi Medallion Crest"
+          />
+          <div class="crest-tabs">
+            <button class="crest-thumb-btn active" onclick="switchCrest('assets/icon-father-satoshi.png', this)">
+              <img src="assets/icon-father-satoshi.png" alt="Crest 1" />
+              Santa Crest
+            </button>
+            <button class="crest-thumb-btn" onclick="switchCrest('assets/icon-dasher-lead.png', this)">
+              <img src="assets/icon-dasher-lead.png" alt="Crest 2" />
+              Dasher Crest
+            </button>
+            <button class="crest-thumb-btn" onclick="switchCrest('assets/icon-sleigh-crest.png', this)">
+              <img src="assets/icon-sleigh-crest.png" alt="Crest 3" />
+              Gold Rim Crest
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dual Wide Panorama Strip -->
+    <section class="panorama-section">
+      <div class="shell panorama-grid">
+        <div class="panorama-card">
+          <img src="assets/feature-aurora-flight.jpg" alt="Full Aurora Flight Panorama" />
+          <div class="panorama-caption">
+            <b>Full 12/12 Aurora Flight</b>
+            <span>Soaring above the North Pole Village</span>
+          </div>
+        </div>
+        <div class="panorama-card">
+          <img src="assets/feature-reindeer-welcome.jpg" alt="Workshop Courtyard Panorama" />
+          <div class="panorama-caption">
+            <b>The Workshop Courtyard</b>
+            <span>Dasher &amp; the Brass Sleigh Counter</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Spinning Sleigh Odometer + 12-Reindeer Team Selector -->
+    <section id="sleigh-odometer" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Your Sleigh, Your Way.</h2>
+          <p>
+            Look closely at the brass side-runners of Santa’s sleigh: those carved pine-tree cylinders are physical
+            mechanical odometer reels that spin faster with every reindeer you harness.
+          </p>
+        </div>
+
+        <div class="simulator-box">
+          <div class="sim-top">
+            <img
+              class="sim-closeup"
+              src="assets/sleigh-odometer-closeup.jpg"
+              alt="Close-up of the Brass Sleigh Odometer Drums"
+            />
+            <div class="sim-controls">
+              <h3 id="simStageTitle">All 12 Reindeer Soaring in Unison!</h3>
+              <p id="simStageDesc" style="color: var(--muted); margin: 4px 0 8px;">
+                Tap any reindeer below to toggle their harness and watch the live mechanical Satoshi reels accelerate in real time:
+              </p>
+
+              <!-- Live Ticking Mechanical Odometer -->
+              <div class="live-odometer-wrap">
+                <span class="odo-bolt">⚡</span>
+                <div class="odo-digits" id="liveOdoDigits">
+                  <div class="odo-reel">0</div>
+                  <div class="odo-reel">0</div>
+                  <div class="odo-reel">5</div>
+                  <div class="odo-reel">2</div>
+                  <div class="odo-reel">8</div>
+                  <div class="odo-reel">0</div>
+                </div>
+                <span class="odo-rate-badge" id="liveOdoRate">+16.4 sats/s · FULL AURORA</span>
+              </div>
+
+              <!-- 12 Reindeer Interactive Harness Grid (ready for individual reindeer portraits) -->
+              <div class="reindeer-pips" id="reindeerPips"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Unique Cinematic Wide Banners Mapped to the 4 Flight Stages (Hover Only, No Lightbox Click) -->
+        <div id="flight-chapters" class="chapters-grid">
+          <article class="chapter-card">
+            <img
+              src="assets/banner-courtyard-lineup.jpg"
+              alt="Stage I: Courtyard Lineup"
+            />
+            <div class="chapter-body">
+              <div class="chapter-tier">Stage I · 1–3 Reindeer Harnessed</div>
+              <h3>Stirring in the North Pole Courtyard</h3>
+              <p>The first brass sleigh bells chime across the snowy stone bridge as Dasher, Dancer, and Prancer step into their golden traces.</p>
+            </div>
+          </article>
+
+          <article class="chapter-card">
+            <img
+              src="assets/banner-reindeer-smile.jpg"
+              alt="Stage II: Golden Reins & Lantern Ignition"
+            />
+            <div class="chapter-body">
+              <div class="chapter-tier">Stage II · 4–6 Reindeer Harnessed</div>
+              <h3>Golden Reins &amp; Lantern Ignition</h3>
+              <p>As Vixen, Comet, and Cupid join the team, the sleigh lanterns blaze warm amber and the brass odometer drums begin to hum.</p>
+            </div>
+          </article>
+
+          <article class="chapter-card">
+            <img
+              src="assets/banner-village-takeoff.jpg"
+              alt="Stage III: Village Takeoff"
+            />
+            <div class="chapter-body">
+              <div class="chapter-tier">Stage III · 7–11 Reindeer Harnessed</div>
+              <h3>Liftoff Above the Workshop Rooftops</h3>
+              <p>Donner, Blitzen, Rudolph, Olive, and Clarion lift the heavy brass runners clean off the snow into a ribbon of stardust.</p>
+            </div>
+          </article>
+
+          <article class="chapter-card transparent-stage">
+            <img
+              src="assets/banner-golden-medallion-flight.png"
+              alt="Stage IV: Northern Lights Overdrive"
+            />
+            <div class="chapter-body">
+              <div class="chapter-tier">Stage IV · All 12 Reindeer Harnessed</div>
+              <h3>Northern Lights Overdrive</h3>
+              <p>When Aurora anchors the 12th spot, the sky erupts in emerald and glacier-blue ribbons while the sleigh reels spin at peak velocity.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Vertical 9:16 Story Posters Explaining Gameplay -->
+    <section id="story-posters" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div class="kicker">How You Play</div>
+          <h2>4 Handcrafted North Pole Story Posters</h2>
+          <p>Light the daily Yule Hearth, harness all 12 reindeer, spin the brass sleigh reels, and fill your Snow Globe with rare holiday ornaments.</p>
+        </div>
+
+        <div class="posters-grid">
+          <article class="poster-card">
+            <img src="assets/poster-courtyard-gathering.jpg" alt="Light the Daily Yule Hearth" />
+            <div class="poster-overlay">
+              <span>Step 01 · Daily Ritual</span>
+              <h4>Light the Yule Hearth</h4>
+              <p>Check in each night to stoke the workshop fire, build your streak, and earn bonus sats and candy canes.</p>
+            </div>
+          </article>
+
+          <article class="poster-card">
+            <img src="assets/poster-sleigh-drums.jpg" alt="Spin the Brass Sleigh Reels" />
+            <div class="poster-overlay">
+              <span>Step 02 · Sleigh Odometer</span>
+              <h4>Spin the Brass Sleigh Reels</h4>
+              <p>Watch the carved pine-tree cylinders on Santa’s sleigh roll forward as your balance climbs toward the Gift Vault milestone.</p>
+            </div>
+          </article>
+
+          <article class="poster-card">
+            <img src="assets/poster-dasher-snowburst.jpg" alt="Harness the 12 Reindeer" />
+            <div class="poster-overlay">
+              <span>Step 03 · Build the Team</span>
+              <h4>Harness All 12 Reindeer</h4>
+              <p>Wake Dasher, Dancer, Rudolph, and the whole crew—every harness mints a collectible ornament and boosts your flight tier.</p>
+            </div>
+          </article>
+
+          <article class="poster-card">
+            <img src="assets/poster-vertical-climb.jpg" alt="Choose Naughty or Nice" />
+            <div class="poster-overlay">
+              <span>Step 04 · Snow Globe &amp; Vault</span>
+              <h4>Choose Naughty or Nice</h4>
+              <p>Showcase Common to Legendary Aurora Crowns in your Snow Globe, share your sleigh code, and unlock the North Pole Gift Vault.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- All 6 Sister Apps in the Connected BeeFour Universe -->
+    <section id="universe" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div class="kicker">The BeeFour Studio Fleet</div>
+          <h2>Part of a Connected Cozy Universe</h2>
+          <p>Explore all six live apps from Bee Four Inc. on Google Play.</p>
+        </div>
+
+        <div class="universe-grid">
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoin" target="_blank" rel="noopener">
+            <div>
+              <small>🐝 Flagship Hive · Google Play</small>
+              <h3>BeeFour Bitcoin</h3>
+              <p>Activate robotic honeybees, keep the hive humming, and stack satoshis in the original BeeFour flagship app.</p>
+            </div>
+            <span class="uni-link">View on Google Play →</span>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.spookysatoshis" target="_blank" rel="noopener">
+            <div>
+              <small>🎃 Haunted Crypt · Google Play</small>
+              <h3>Spooky Satoshis</h3>
+              <p>Light the Daily Crypt Fire, wake 6 nocturnal haunters, and mint haunted relics in a claymation midnight dungeon.</p>
+            </div>
+            <span class="uni-link">View on Google Play →</span>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.pumpkinprotocol" target="_blank" rel="noopener">
+            <div>
+              <small>🍂 Autumn Grove · Google Play</small>
+              <h3>Pumpkin Protocol</h3>
+              <p>Tend the woodland harvest grove with Barnaby, Hazel, Pip, and Mallow in a warm carved-wood diorama world.</p>
+            </div>
+            <span class="uni-link">View on Google Play →</span>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.penguinprotocol" target="_blank" rel="noopener">
+            <div>
+              <small>🐧 Glacier Colony · Google Play</small>
+              <h3>Penguin Protocol</h3>
+              <p>Waddle into the Antarctic ice colony, wake your penguin harvesters, and collect frosty charms across the glacier.</p>
+            </div>
+            <span class="uni-link">View on Google Play →</span>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.manekineko" target="_blank" rel="noopener">
+            <div>
+              <small>🐱 Lucky Shrine · Google Play</small>
+              <h3>Maneki-Neko Miner</h3>
+              <p>Beckon good fortune with lucky ceramic cats, golden koban charms, and daily shrine streaks.</p>
+            </div>
+            <span class="uni-link">View on Google Play →</span>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.cricketcrypto" target="_blank" rel="noopener">
+            <div>
+              <small>🏏 Stadium Pitch · Google Play</small>
+              <h3>Cricket Crypto Pro</h3>
+              <p>Step onto the pitch, power up your stadium striker lineup, and rack up boundary combos.</p>
+            </div>
+            <span class="uni-link">View on Google Play →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Policy Section (#privacy anchor used by the Android app & Google Play Console) -->
+    <section id="privacy" class="section">
+      <div class="shell">
+        <div class="privacy-box">
+          <div class="kicker">Satoshi Santa · Official Store Policy &amp; Disclosures</div>
+          <h2 style="margin: 6px 0 8px;">Privacy Policy &amp; Terms of Use</h2>
+          <p style="color: var(--muted); font-size: 13.5px; margin: 0;">
+            Effective October 22, 2026 · Bee Four Inc. (Vancouver, BC, Canada) · Contact: <a href="mailto:support@beefourbitcoin.com" style="color: var(--amber);">support@beefourbitcoin.com</a> · <a href="/app-ads.txt" style="color: var(--emerald);">Authorized Seller File (app-ads.txt)</a>
+          </p>
+
+          <div class="privacy-grid">
+            <div class="privacy-item">
+              <h4>1. Local-First Progress (No Account or Personal Data Required)</h4>
+              <p>Satoshi Santa does not require an account and never asks for your name, email address, phone number, or wallet keys. Your sleigh progress, streak, reindeer timers, and Snow Globe ornaments are stored locally on your device. Uninstalling the app deletes all local app data.</p>
+            </div>
+            <div class="privacy-item">
+              <h4>2. Advertising, Mediation &amp; Consent (GDPR / CCPA / UMP)</h4>
+              <p>To keep Satoshi Santa free, we show voluntary Rewarded Videos and 300×250 MREC banners supplied by Google AdMob and authorized mediation partners (Unity Ads, Meta Audience Network, Pangle). These SDKs may collect your device Advertising ID (Android <code>AD_ID</code>), coarse IP-based location, and diagnostics for ad delivery, measurement, and fraud prevention. Where required by law (EEA/UK/US states), we request consent via Google’s User Messaging Platform (UMP), and you can update your choices anytime via the in-app <strong>Privacy Options</strong> button.</p>
+            </div>
+            <div class="privacy-item">
+              <h4>3. In-App Reward Units (“Sats”) — No Cash Value</h4>
+              <p>All “sats” / “Satoshis” and ornaments in Satoshi Santa are <strong>virtual in-app gameplay items only</strong>. They are not cryptocurrency, are not backed by Bitcoin or any financial asset, carry no cash value, cannot be transferred or exchanged, and payout settlement is closed. Nothing in the app constitutes a financial product or investment.</p>
+            </div>
+            <div class="privacy-item">
+              <h4>4. Google Play Billing, Children’s Privacy &amp; Contact</h4>
+              <p>Optional Gift Shop purchases are processed exclusively by Google Play Billing; Bee Four Inc. never receives or stores your payment card details. Satoshi Santa is not directed to children under 13. For data inquiries or support, email <a href="mailto:support@beefourbitcoin.com" style="color: var(--amber);">support@beefourbitcoin.com</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <strong>Satoshi Santa</strong> · Handcrafted by Bee Four Inc. ·
+      <a href="mailto:support@beefourbitcoin.com" style="color: var(--amber);">support@beefourbitcoin.com</a> ·
+      <a href="https://www.beefourbitcoin.com/" style="color: var(--muted);">beefourbitcoin.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const REINDEER = [
+      { name: 'Dasher', role: 'Lead Sprinter', active: true },
+      { name: 'Dancer', role: 'Ribbon Weaver', active: true },
+      { name: 'Prancer', role: 'Bell Ringer', active: true },
+      { name: 'Vixen', role: 'Compass Guide', active: true },
+      { name: 'Comet', role: 'Night Watch', active: true },
+      { name: 'Cupid', role: 'Hearth Keeper', active: true },
+      { name: 'Donner', role: 'Thunder Hoof', active: true },
+      { name: 'Blitzen', role: 'Spark Runner', active: true },
+      { name: 'Rudolph', role: 'Fog Piercer', active: true },
+      { name: 'Olive', role: 'Holly Spotter', active: true },
+      { name: 'Clarion', role: 'Chime Herald', active: true },
+      { name: 'Aurora', role: 'Crown Stag', active: true },
+    ];
+
+    let odoValue = 5280;
+
+    function switchCrest(src, btn) {
+      const img = document.getElementById('heroCrestImg');
+      img.src = src;
+      document.querySelectorAll('.crest-thumb-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function renderReindeerPips() {
+      const container = document.getElementById('reindeerPips');
+      container.innerHTML = '';
+      const activeCount = REINDEER.filter((r) => r.active).length;
+
+      REINDEER.forEach((r, idx) => {
+        const div = document.createElement('div');
+        div.className = 'r-pip' + (r.active ? ' active' : '');
+        div.onclick = () => {
+          REINDEER[idx].active = !REINDEER[idx].active;
+          renderReindeerPips();
+        };
+        div.innerHTML = `<b>${r.name}</b><small>${r.active ? 'HARNESSED' : r.role}</small>`;
+        container.appendChild(div);
+      });
+
+      const ttl = document.getElementById('simStageTitle');
+      const rateBadge = document.getElementById('liveOdoRate');
+      const speed = (0.4 + activeCount * 1.1 + (activeCount === 12 ? 3.0 : 0)).toFixed(1);
+
+      if (activeCount === 12) {
+        ttl.textContent = 'All 12 Reindeer Soaring in Unison!';
+        rateBadge.textContent = `+${speed} sats/s · FULL AURORA OVERDRIVE`;
+      } else if (activeCount >= 7) {
+        ttl.textContent = `${activeCount} Reindeer Galloping — Sleigh Lifting Off!`;
+        rateBadge.textContent = `+${speed} sats/s · GALLOPING FLIGHT`;
+      } else if (activeCount >= 1) {
+        ttl.textContent = `${activeCount} Reindeer Harnessed — Sleigh Reels Spinning`;
+        rateBadge.textContent = `+${speed} sats/s · TROTTING`;
+      } else {
+        ttl.textContent = 'Sleigh Parked in Courtyard — Tap Reindeer to Harness';
+        rateBadge.textContent = `+0.4 sats/s · IDLE`;
+      }
+    }
+
+    // Live spinning odometer animation loop
+    setInterval(() => {
+      const activeCount = REINDEER.filter((r) => r.active).length;
+      const step = Math.max(1, Math.round(activeCount * 0.6 + (activeCount === 12 ? 3 : 0)));
+      odoValue = (odoValue + step) % 1000000;
+      const str = String(odoValue).padStart(6, '0');
+      const reels = document.querySelectorAll('#liveOdoDigits .odo-reel');
+      reels.forEach((el, i) => {
+        if (el.textContent !== str[i]) {
+          el.textContent = str[i];
+          el.classList.add('bump');
+          setTimeout(() => el.classList.remove('bump'), 110);
+        }
+      });
+    }, 380);
+
+    renderReindeerPips();
+  </script>
+</body>
+</html>
