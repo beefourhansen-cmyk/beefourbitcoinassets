@@ -1,3 +1,21 @@
+# ════════════════════════════════════════════════════════════════════════════
+# ⚠️  LANDMINE — DO NOT REGRESS THESE LINES ⚠️
+#
+# facebook.com  and  fbadmanager.com  MUST be listed as DIRECT, never RESELLER.
+#
+# WHY: Meta (Facebook Audience Network) is a DIRECT mediation partner in our
+# AdMob waterfall/bidding stack. Declared DIRECT, AdMob can run it as first-party
+# demand. Declared RESELLER, Meta bidding gets downgraded/disabled and mediation
+# revenue collapses (this already happened once and took days to diagnose).
+#
+# HISTORY: an auto-generated version from the Appodeal migration carried
+# `facebook.com, ..., RESELLER` — that was WRONG and silently gutted Meta revenue.
+# Corrected 2026-08-19 (commit 26bba44c) to sync with the live production file.
+# Do NOT "fix" these back to RESELLER — RESELLER here IS the bug.
+#
+# The LIVE production file is the source of truth. If this checkout ever drifts
+# from live, re-sync from live BEFORE redeploying the website.
+# ════════════════════════════════════════════════════════════════════════════
 #Updated June 8 2026
 #Appodeal
 appodeal.com, 264472, DIRECT
