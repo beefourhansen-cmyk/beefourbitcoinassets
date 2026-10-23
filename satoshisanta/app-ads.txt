@@ -30,6 +30,8 @@ fbadmanager.com, 1489924532913383, DIRECT, f223c113d09e74fb
 #Pangle
 pangleglobal.com, 5039520, DIRECT                
 pubmatic.com, 161490, RESELLER, 5d62403b186f2ac
+#Unity Ads
+unity.com, 3574409756872, DIRECT, 96cabb5fbdde37a7
 #Add other networks if applicable
 #Resellers
 152media.info, 152M312, RESELLER
