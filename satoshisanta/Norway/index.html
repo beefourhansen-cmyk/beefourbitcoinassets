@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="nb-NO">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Satoshi Santa Norge — Din slede, på din måte | Spenn for de 12 reinsdyrene</title>
+  <meta name="description" content="Satoshi Santa vekker Nordpolens juleverksted til live i Norge. Spenn for alle 12 reinsdyr, spinn sledens messinghjul i full Nordlys-overdrive, og samle sjeldne Snøkule-julekuler mens du utvinner Satoshis." />
+  <meta name="theme-color" content="#07131E" />
+  <link rel="canonical" href="https://www.beefourbitcoin.com/satoshisanta/Norway/" />
+  <link rel="alternate" hreflang="no" href="https://www.beefourbitcoin.com/satoshisanta/Norway/" />
+  <link rel="alternate" hreflang="nb-NO" href="https://www.beefourbitcoin.com/satoshisanta/Norway/" />
+  <link rel="alternate" hreflang="en" href="https://www.beefourbitcoin.com/satoshisanta/" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:title" content="Satoshi Santa Norge — Din slede, på din måte" />
+  <meta property="og:description" content="Spenn for alle 12 reinsdyr under nordlyset, spinn sledens messing-odometer og samle sjeldne Snøkule-julekuler for å samle Satoshis." />
+  <meta property="og:image" content="https://www.beefourbitcoin.com/satoshisanta/assets/gallery/feature-aurora-flight.jpg" />
+  <style>
+    :root {
+      --bg: #07131E;
+      --bg-deep: #040B12;
+      --surface: #0D1E2E;
+      --line: #1B354D;
+      --snow: #F4F9FC;
+      --muted: #9BB8CE;
+      --dim: #6688A4;
+      --brass: #E5B842;
+      --emerald: #2EE59D;
+      --font: Calibri, "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 35% at 50% 0%, rgba(46, 229, 157, 0.12), transparent 70%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 35%, #061420 100%);
+      color: var(--snow);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.55;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font);
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--snow);
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+      max-width: 66ch;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--brass);
+      outline-offset: 3px;
+    }
+
+    .shell {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Top Navigation ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(4, 11, 18, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--snow);
+      font-weight: 700;
+      font-size: 19px;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(145deg, #E5B842 0%, #B8860B 100%);
+      color: #040B12;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 19px;
+      box-shadow: 0 2px 10px rgba(229, 184, 66, 0.25);
+    }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--snow); }
+
+    .lang-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--snow) !important;
+      font-size: 13px !important;
+    }
+    .lang-pill:hover {
+      border-color: var(--brass);
+    }
+
+    /* Official Google Play Pre-Register Button */
+    .gplay-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      background: #000000;
+      color: #FFFFFF;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 9px;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+    .gplay-badge:hover {
+      border-color: var(--brass);
+    }
+    .gplay-badge svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .gplay-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.12;
+      text-align: left;
+    }
+    .gplay-text small {
+      font-size: 10px;
+      font-weight: 600;
+      color: #CBD5E1;
+    }
+    .gplay-text strong {
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      border-radius: 9px;
+      background: var(--surface);
+      color: var(--snow);
+      border: 1px solid var(--line);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: border-color 0.15s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--brass);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 48px 0 28px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .lead-pill {
+      display: inline-block;
+      color: var(--brass);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 4.6vw, 54px);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+    .hero-copy {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .hero-copy strong {
+      color: var(--snow);
+      font-weight: 600;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .crest-showcase {
+      display: flex;
+      justify-content: center;
+    }
+    .crest-main-img {
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.65));
+    }
+
+    /* ── Section Spacing & Headers ── */
+    .section {
+      padding: 48px 0;
+      border-top: 1px solid rgba(27, 53, 77, 0.6);
+    }
+    .section-head {
+      margin-bottom: 28px;
+    }
+    .section-head h2 {
+      font-size: clamp(26px, 3.2vw, 36px);
+      margin-bottom: 8px;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* ── Interactive Sleigh Odometer Centerpiece ── */
+    .simulator-box {
+      background: linear-gradient(180deg, #0B1B2A 0%, #050E17 100%);
+      border: 1.5px solid rgba(229, 184, 66, 0.55);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 28px;
+    }
+    .sim-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .sim-controls h3 {
+      font-size: 23px;
+      color: var(--snow);
+      margin-bottom: 4px;
+    }
+    .sim-sub {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .live-odometer-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #03080E;
+      border: 1.5px solid var(--brass);
+      border-radius: 12px;
+      padding: 10px 16px;
+      flex-wrap: wrap;
+    }
+    .odo-digits {
+      display: flex;
+      gap: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+    .odo-reel {
+      background: linear-gradient(180deg, #040A10 0%, #11263A 50%, #040A10 100%);
+      border: 1px solid rgba(229, 184, 66, 0.45);
+      border-radius: 5px;
+      width: 30px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--brass);
+      transition: transform 0.1s ease, color 0.15s;
+    }
+    .odo-reel.bump {
+      transform: translateY(-2px);
+      color: var(--emerald);
+    }
+    .odo-rate-badge {
+      color: var(--emerald);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .reindeer-pips {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+    }
+    .r-pip {
+      background: rgba(13, 30, 46, 0.75);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 6px 8px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: border-color 0.15s, background-color 0.15s;
+    }
+    .r-pip img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      opacity: 0.45;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .r-pip.active {
+      background: rgba(46, 229, 157, 0.12);
+      border-color: var(--emerald);
+    }
+    .r-pip.active img {
+      opacity: 1;
+    }
+    .r-pip b {
+      font-size: 13px;
+      color: var(--snow);
+    }
+    .r-pip small {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .r-pip.active small {
+      color: var(--emerald);
+      font-weight: 600;
+    }
+
+    /* ── Wide Panoramas ── */
+    .panorama-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .panorama-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .panorama-card img {
+      width: 100%;
+      aspect-ratio: 1024 / 500;
+      object-fit: cover;
+      display: block;
+    }
+    .panorama-caption {
+      padding: 12px 16px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .panorama-caption b {
+      font-size: 15px;
+      color: var(--snow);
+    }
+    .panorama-caption span {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    /* ── 5 App Screens Showcase ── */
+    .screens-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .screen-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .screen-card img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+    }
+    .screen-caption {
+      padding: 12px;
+      border-top: 1px solid var(--line);
+      flex: 1;
+    }
+    .screen-caption b {
+      display: block;
+      font-size: 14px;
+      color: var(--snow);
+      margin-bottom: 3px;
+    }
+    .screen-caption span {
+      display: block;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ── 9 Vault & Guest Gold Medallions ── */
+    .medallions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px 28px;
+    }
+    .medallion-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .medallion-item img {
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+    }
+    .medallion-info h4 {
+      font-size: 17px;
+      margin-bottom: 3px;
+    }
+    .medallion-role {
+      color: var(--brass);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .medallion-info p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* ── What You Do Editorial Columns ── */
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+    .editorial-col h3 {
+      font-size: 19px;
+      color: var(--snow);
+      margin-bottom: 8px;
+    }
+    .editorial-col p {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── Connected BeeFour Universe ── */
+    .universe-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .uni-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+      text-decoration: none;
+      color: var(--snow);
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 16px;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .uni-card:hover {
+      border-color: var(--brass);
+      transform: translateY(-2px);
+    }
+    .uni-icon {
+      width: 68px;
+      height: 68px;
+      flex-shrink: 0;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+    }
+    .uni-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      min-width: 0;
+      height: 100%;
+    }
+    .uni-card h3 {
+      font-size: 18.5px;
+      margin-bottom: 6px;
+    }
+    .uni-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .uni-link {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--emerald);
+      margin-top: auto;
+    }
+
+    /* ── Privacy Policy ── */
+    .privacy-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .privacy-item {
+      background: var(--bg-deep);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .privacy-item h4 {
+      color: var(--brass);
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .privacy-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 48px;
+      color: var(--dim);
+      font-size: 14px;
+      text-align: center;
+    }
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: var(--snow);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid, .panorama-grid, .privacy-grid, .universe-grid, .medallions-grid {
+        grid-template-columns: 1fr;
+      }
+      .editorial-grid, .screens-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .reindeer-pips {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">₿</span>
+        <span>Satoshi Santa <small style="font-size: 13px; color: var(--brass); font-weight: 600; margin-left: 4px;">🇳🇴 NORGE</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#sleigh-odometer">Din slede</a>
+        <a href="#inside-the-app">Inne i appen</a>
+        <a href="#collectible-medallions">Medaljonger</a>
+        <a href="#story-posters">Slik spiller du</a>
+        <a href="#universe">BeeFour-universet</a>
+        <a href="#privacy">Personvern</a>
+        <a class="lang-pill" href="/satoshisanta/" title="Switch to English">🇬🇧 English</a>
+      </div>
+      <a class="gplay-badge" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta&hl=no&gl=NO" target="_blank" rel="noopener" aria-label="Tilgjengelig på Google Play">
+        <svg viewBox="0 0 512 512" aria-hidden="true">
+          <path fill="#4285F4" d="M48 59.5v393c0 14.2 15.4 23.1 27.7 16l209.6-212.5L75.7 43.5C63.4 36.4 48 45.3 48 59.5z"/>
+          <path fill="#34A853" d="M359.4 181.2L102.9 33.2l182.4 222.8 74.1-74.8z"/>
+          <path fill="#FBBC04" d="M453.7 235.6l-94.3-54.4-74.1 74.8 74.1 74.8 94.3-54.4c18.1-10.5 18.1-30.3 0-40.8z"/>
+          <path fill="#EA4335" d="M102.9 478.8l256.5-148-74.1-74.8-182.4 222.8z"/>
+        </svg>
+        <div class="gplay-text">
+          <small>Last ned på</small>
+          <strong>Google Play</strong>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="lead-pill">🇳🇴 12 reinsdyr, ett mekanisk slede-odometer i messing</div>
+          <h1>Spenn for reinsdyrene.<br />Tenn nordlyset.</h1>
+          <p class="hero-copy">
+            <strong>Satoshi Santa</strong> vekker Nordpolens juleverksted til live. Spenn for alle
+            <strong>12 reinsdyr</strong>, spinn sledens messinghjul inn i
+            <strong>Full Nordlys-overdrive</strong> mens du lager sjeldne Snøkule-julekuler for å
+            <strong>samle Satoshis</strong>, og åpne Gavehvelvet under polarnatten.
+          </p>
+          <div class="hero-actions">
+            <a class="gplay-badge" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta&hl=no&gl=NO" target="_blank" rel="noopener">
+              <svg viewBox="0 0 512 512" aria-hidden="true">
+                <path fill="#4285F4" d="M48 59.5v393c0 14.2 15.4 23.1 27.7 16l209.6-212.5L75.7 43.5C63.4 36.4 48 45.3 48 59.5z"/>
+                <path fill="#34A853" d="M359.4 181.2L102.9 33.2l182.4 222.8 74.1-74.8z"/>
+                <path fill="#FBBC04" d="M453.7 235.6l-94.3-54.4-74.1 74.8 74.1 74.8 94.3-54.4c18.1-10.5 18.1-30.3 0-40.8z"/>
+                <path fill="#EA4335" d="M102.9 478.8l256.5-148-74.1-74.8-182.4 222.8z"/>
+              </svg>
+              <div class="gplay-text">
+                <small>Last ned på</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+            <a class="btn-secondary" href="#sleigh-odometer">Prøv slede-odometeret</a>
+          </div>
+        </div>
+
+        <div class="crest-showcase">
+          <img
+            class="crest-main-img"
+            src="/satoshisanta/assets/gallery/icon-father-satoshi.png"
+            alt="Satoshi Santa-emblem"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Din slede, på din måte -->
+    <section id="sleigh-odometer" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Din slede, på din måte.</h2>
+          <p>
+            Messingmeiene på julenissens slede er utskårne odometer-sylindere med granmotiv som spinner raskere for hvert reinsdyr du spenner for.
+          </p>
+        </div>
+
+        <div class="simulator-box">
+          <div class="sim-header">
+            <div class="sim-controls">
+              <h3 id="simStageTitle">Alle 12 reinsdyr svever i samlet flukt</h3>
+              <p class="sim-sub" id="simStageDesc">
+                Klikk på en reinsdyr-medaljong nedenfor for å koble selen av eller på og endre farten på sledehjulene:
+              </p>
+            </div>
+
+            <div class="live-odometer-wrap">
+              <div class="odo-digits" id="liveOdoDigits">
+                <div class="odo-reel">0</div>
+                <div class="odo-reel">0</div>
+                <div class="odo-reel">5</div>
+                <div class="odo-reel">2</div>
+                <div class="odo-reel">8</div>
+                <div class="odo-reel">0</div>
+              </div>
+              <span class="odo-rate-badge" id="liveOdoRate">+16,4 sats/s i full Nordlys-overdrive</span>
+            </div>
+          </div>
+
+          <div class="reindeer-pips" id="reindeerPips"></div>
+        </div>
+
+        <!-- 2 Distinct Wide Panoramas -->
+        <div class="panorama-grid">
+          <div class="panorama-card">
+            <img src="/satoshisanta/assets/gallery/feature-aurora-flight.jpg" alt="Full 12-reinsdyrs nordlysflukt over julelandsbyen" />
+            <div class="panorama-caption">
+              <b>Full 12/12 Nordlysflukt</b>
+              <span>Svever høyt over Nordpolens landsby</span>
+            </div>
+          </div>
+          <div class="panorama-card">
+            <img src="/satoshisanta/assets/gallery/banner-courtyard-lineup.jpg" alt="Reinsdyrflokken oppstilt på gårdsplassen ved juleverkstedet" />
+            <div class="panorama-caption">
+              <b>Verkstedets gårdsplass</b>
+              <span>Reinsdyrene oppstilt over den snødekte steinbroen</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inne i appen (5 ekte skjermbilder) -->
+    <section id="inside-the-app" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Inne på Nordpolens juleverksted</h2>
+          <p>Spinn det mekaniske slede-odometeret, utvid sledekapasiteten i Gavebutikken, samle legendariske Snøkule-kort og lås opp Gavehvelvet.</p>
+        </div>
+
+        <div class="screens-grid">
+          <article class="screen-card">
+            <img src="/satoshisanta/assets/screens/screenshot1.jpg" alt="Slede-odometeret på juleverkstedet" />
+            <div class="screen-caption">
+              <b>Slede-odometeret</b>
+              <span>Spenn for reinsdyr og hold den daglige julegruven varm</span>
+            </div>
+          </article>
+
+          <article class="screen-card">
+            <img src="/satoshisanta/assets/screens/screenshot2.jpg" alt="Gavebutikken på Nordpolen" />
+            <div class="screen-caption">
+              <b>Gavebutikken</b>
+              <span>Isbjørn-Ekspressen, Satoshi-Kronhjort og Nordlyspass</span>
+            </div>
+          </article>
+
+          <article class="screen-card">
+            <img src="/satoshisanta/assets/screens/screenshot3.jpg" alt="Gavehvelvet og Nordpolfondet" />
+            <div class="screen-caption">
+              <b>Gavehvelvet</b>
+              <span>Lås opp messinghvelvet for å se saldoen din eller gi til Nordpolfondet</span>
+            </div>
+          </article>
+
+          <article class="screen-card">
+            <img src="/satoshisanta/assets/screens/screenshot4.jpg" alt="Legendarisk julekule i Snøkulen" />
+            <div class="screen-caption">
+              <b>Legendariske julekuler</b>
+              <span>Samle sjeldne Snøkule-julekuler i 4 sjeldenheter</span>
+            </div>
+          </article>
+
+          <article class="screen-card">
+            <img src="/satoshisanta/assets/screens/screenshot5.jpg" alt="Midnattsflukt over snødekte tak" />
+            <div class="screen-caption">
+              <b>Midnattsflukt</b>
+              <span>Svev over vinterhimmelen med fullt spann</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 Spesialutgave-medaljonger -->
+    <section id="collectible-medallions" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Medaljonger fra Nordpolens hvelv og gjester</h2>
+          <p>Utover de 12 sledereinsdyrene kan du samle verkstedmestere, solvervskroner og julegjester fra hele BeeFour-universet.</p>
+        </div>
+
+        <div class="medallions-grid">
+          <div class="medallion-item">
+            <img src="/satoshisanta/assets/harvesters/satoshistag.png" alt="Satoshi-Kronhjort medaljong" />
+            <div class="medallion-info">
+              <h4>Satoshi-Kronhjort</h4>
+              <div class="medallion-role">Nordpolens mester</div>
+              <p>Utstyrt med pilotbriller i messing og et gyllent polarkompass.</p>
+            </div>
+          </div>
+
+          <div class="medallion-item">
+            <img src="/satoshisanta/assets/harvesters/santahaticonicbtc.png" alt="Fader Satoshi-Armadaen medaljong" />
+            <div class="medallion-info">
+              <h4>Fader Satoshi-Armadaen</h4>
+              <div class="medallion-role">Nordpolens Suverene Utgave</div>
+              <p>Høyrød fløyel, frostede grankvister og et smidd gullemblem under nordlyset.</p>
+            </div>
+          </div>
+
+          <div class="medallion-item">
+            <img src="/satoshisanta/assets/harvesters/bearfestive.png" alt="Isbjørn-Ekspressen medaljong" />
+            <div class="medallion-info">
+              <h4>Isbjørn-Ekspressen</h4>
+              <div class="medallion-role">Sledekaptein</div>
+              <p>Kledd i varme verkstedlys og strikket vinterlue for vakt i polarnatten.</p>
+            </div>
+          </div>
+
+          <div class="medallion-item">
+            <img src="/satoshisanta/assets/harvesters/solstice.png" alt="Solverv-Kronhjort medaljong" />
+            <div class="medallion-info">
+              <h4>Solverv-Kronhjort</h4>
+              <div class="medallion-role">Stjernelys-julekuler</div>
+              <p>Bærer håndblåste glasskuler i rubinrødt og gull over snødekte hustak.</p>
+            </div>
+          </div>
+
+          <div class="medallion-item">
+            <img src="/satoshisanta/assets/harvesters/bookwormdear.png" alt="Skriveren Bramble medaljong" />
+            <div class="medallion-info">
+              <h4>Skriveren Bramble</h4>
+              <div class="medallion-role">24t Nordlyspass-segl</div>
+              <p>Passer godt på flyrullene og loggboken i skinnvesken på selen.</p>
+            </div>
+          </div>
+
+          <div class="medallion-item">
+            <img src="/satoshisanta/assets/harvesters/manekinekosanta.png" alt="Maneki-Neko Santa medaljong" />
+            <div class="medallion-info">
+              <h4>Maneki-Neko Santa</h4>
+              <div class="medallion-role">Gjest fra Lykketempelet</div>
+              <p>Vinker varm lyktelykke fra Maneki-Neko Miner rett inn på Nordpolen.</p>
+            </div>
+          </div>
+
+          <div class="medallion-item">
+            <img src="/satoshisanta/assets/harvesters/littykitty.png" alt="Litty Kitty medaljong" />
+            <div class="medallion-info">
+              <h4>Litty Kitty</h4>
+              <div class="medallion-role">Gavesekk-vokter</div>
+              <p>Iført myk nisselue og høyrødt skjerf mens hun vokter verkstedets gavesekk.</p>
+            </div>
+          </div>
+
+          <div class="medallion-item">
+            <img src="/satoshisanta/assets/harvesters/penguinprotocolsanta.png" alt="Isbre-pingvin medaljong" />
+            <div class="medallion-info">
+              <h4>Isbre-pingvin</h4>
+              <div class="medallion-role">Gjest fra Penguin Protocol</div>
+              <p>Vaggende nordover fra iskolonien med frostet strikkeskjerf og gullmynt.</p>
+            </div>
+          </div>
+
+          <div class="medallion-item">
+            <img src="/satoshisanta/assets/harvesters/prezziepenguin.png" alt="Prezzie-pingvin medaljong" />
+            <div class="medallion-info">
+              <h4>Prezzie-pingvin</h4>
+              <div class="medallion-role">Gavebud med gullbånd</div>
+              <p>Leverer gullpakkede julegaver forseglet med Nordpolens offisielle stempel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dette gjør du i Satoshi Santa -->
+    <section id="story-posters" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Dette gjør du i Satoshi Santa</h2>
+          <p>Tenn den daglige julegruven, spenn for alle 12 reinsdyr, spinn sledens messinghjul og fyll Snøkulen med sjeldne julekuler.</p>
+        </div>
+
+        <div class="editorial-grid">
+          <div class="editorial-col">
+            <h3>Tenn den daglige julegruven</h3>
+            <p>Stikk innom hver kveld for å holde verkstedbålet varmt, bygge rekken din og få bonus-sats og sukkerstenger. Kristtornblader beskytter rekken hvis du mister en kveld.</p>
+          </div>
+
+          <div class="editorial-col">
+            <h3>Spinn messinghjulene på sleden</h3>
+            <p>Se de utskårne odometer-hjulene med granmotiv rulle fremover etter hvert som saldoen din vokser mot Gavehvelvet.</p>
+          </div>
+
+          <div class="editorial-col">
+            <h3>Spenn for alle 12 reinsdyr</h3>
+            <p>Vekk Dasher, Dancer, Rudolph og hele flokken — hver sele lager en ny julekule til samlingen og øker sledefarten.</p>
+          </div>
+
+          <div class="editorial-col">
+            <h3>Lås opp Gavehvelvet</h3>
+            <p>Vis frem alt fra Vanlig Frost til Legendarisk Nordlyskrone i Snøkulen, del sledekoden din og støtt arktisk dyreliv og kattunger gjennom VOKRA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connected BeeFour Universe -->
+    <section id="universe" class="section">
+      <div class="shell">
+        <div class="section-head">
+          <h2>En del av BeeFour-universet</h2>
+          <p>Utforsk alle seks spillene fra Bee Four Inc. på Google Play.</p>
+        </div>
+
+        <div class="universe-grid">
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoin&hl=no&gl=NO" target="_blank" rel="noopener">
+            <img class="uni-icon" src="/satoshisanta/assets/universe/beefour-bitcoin.png" alt="BeeFour Bitcoin app-ikon" width="68" height="68" loading="lazy" />
+            <div class="uni-body">
+              <div>
+                <h3>BeeFour Bitcoin</h3>
+                <p>Aktiver robot-honningbier, hold bikuben i gang og samle satoshis i vårt originale flaggskip.</p>
+              </div>
+              <span class="uni-link">Se på Google Play</span>
+            </div>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.spookysatoshis&hl=no&gl=NO" target="_blank" rel="noopener">
+            <img class="uni-icon" src="/satoshisanta/assets/universe/spooky-satoshis.png" alt="Spooky Satoshis app-ikon" width="68" height="68" loading="lazy" />
+            <div class="uni-body">
+              <div>
+                <h3>Spooky Satoshis</h3>
+                <p>Tenn kryptbålet, vekk seks nattlige spøkelser og samle relikvier i et håndlaget midnattskammer.</p>
+              </div>
+              <span class="uni-link">Se på Google Play</span>
+            </div>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.pumpkinprotocol&hl=no&gl=NO" target="_blank" rel="noopener">
+            <img class="uni-icon" src="/satoshisanta/assets/universe/pumpkin-protocol.png" alt="Pumpkin Protocol app-ikon" width="68" height="68" loading="lazy" />
+            <div class="uni-body">
+              <div>
+                <h3>Pumpkin Protocol</h3>
+                <p>Stell høstlundens avlinger sammen med Barnaby, Hazel, Pip og Mallow i en varm utskåret treverden.</p>
+              </div>
+              <span class="uni-link">Se på Google Play</span>
+            </div>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.penguinprotocol&hl=no&gl=NO" target="_blank" rel="noopener">
+            <img class="uni-icon" src="/satoshisanta/assets/universe/penguin-protocol.png" alt="Penguin Protocol app-ikon" width="68" height="68" loading="lazy" />
+            <div class="uni-body">
+              <div>
+                <h3>Penguin Protocol</h3>
+                <p>Bli med inn i den antarktiske iskolonien, vekk pingvin-innhøsterne og samle frostmedaljonger på isbreen.</p>
+              </div>
+              <span class="uni-link">Se på Google Play</span>
+            </div>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.manekineko&hl=no&gl=NO" target="_blank" rel="noopener">
+            <img class="uni-icon" src="/satoshisanta/assets/universe/maneki-neko.png" alt="Maneki-Neko Miner app-ikon" width="68" height="68" loading="lazy" />
+            <div class="uni-body">
+              <div>
+                <h3>Maneki-Neko Miner</h3>
+                <p>Vink inn lykken med keramiske lykkekatter, gylne koban-mynter og daglige tempelrekker.</p>
+              </div>
+              <span class="uni-link">Se på Google Play</span>
+            </div>
+          </a>
+
+          <a class="uni-card" href="https://play.google.com/store/apps/details?id=com.beefour.cricketcrypto&hl=no&gl=NO" target="_blank" rel="noopener">
+            <img class="uni-icon" src="/satoshisanta/assets/universe/cricket-crypto.png" alt="Cricket Crypto Pro app-ikon" width="68" height="68" loading="lazy" />
+            <div class="uni-body">
+              <div>
+                <h3>Cricket Crypto Pro</h3>
+                <p>Stig ut på stadiongresset, oppgrader slagrekken din og bygg opp kombinasjoner for hvert slag.</p>
+              </div>
+              <span class="uni-link">Se på Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personvernerklæring (#privacy) -->
+    <section id="privacy" class="section">
+      <div class="shell">
+        <div class="privacy-box">
+          <h2 style="margin-bottom: 6px;">Personvernerklæring og bruksvilkår (Norge / EØS)</h2>
+          <p style="color: var(--muted); font-size: 14px;">
+            Gyldig fra 21. oktober 2026 — Bee Four Inc. (Vancouver, BC, Canada) — Kontakt: <a href="mailto:support@beefourbitcoin.com" style="color: var(--brass);">support@beefourbitcoin.com</a>
+          </p>
+
+          <div class="privacy-grid">
+            <div class="privacy-item">
+              <h4>1. Lokal lagring på enheten (Ingen brukerkonto kreves)</h4>
+              <p>Satoshi Santa krever ingen konto og ber aldri om navn, e-postadresse, telefonnummer eller private nøkler. Fremgangen din, daglige rekker, reinsdyr-nedtellinger og Snøkule-julekuler lagres lokalt på telefonen din. Hvis du avinstallerer appen, slettes alle lokale appdata.</p>
+            </div>
+            <div class="privacy-item">
+              <h4>2. Annonser, mediering og samtykke i Norge / EØS (GDPR / UMP)</h4>
+              <p>For å holde Satoshi Santa gratis viser vi frivillige belønningsvideoer og 300×250 MREC-bannere levert av Google AdMob og autoriserte medieringspartnere (Unity Ads, Meta Audience Network, Pangle). Disse SDK-ene kan behandle enhetens annonse-ID (Android <code>AD_ID</code>), omtrentlig IP-basert plassering og teknisk diagnostikk for annonselevering, måling og svindelforebygging. I Norge og EØS innhenter vi samtykke via Googles User Messaging Platform (UMP), og du kan når som helst endre valgene dine via knappen <strong>Personvernvalg</strong> i appen.</p>
+            </div>
+            <div class="privacy-item">
+              <h4>3. Belønningsenheter i spillet («Sats»)</h4>
+              <p>Alle «sats» / «Satoshis» og julekuler i Satoshi Santa er virtuelle spillbelønninger utenfor finansmarkedet. Ingenting i appen utgjør et finansielt produkt, en investering eller garantert avkastning.</p>
+            </div>
+            <div class="privacy-item">
+              <h4>4. Google Play-kjøp, barns personvern og kontakt</h4>
+              <p>Valgfrie kjøp i Gavebutikken behandles utelukkende av Google Play Billing; Bee Four Inc. mottar eller lagrer aldri kortopplysningene dine. Satoshi Santa er ikke rettet mot barn under 13 år. For spørsmål om personvern eller brukerstøtte, send e-post til <a href="mailto:support@beefourbitcoin.com" style="color: var(--brass);">support@beefourbitcoin.com</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <strong>Satoshi Santa 🇳🇴</strong>
+      <span>Håndlaget av Bee Four Inc.</span>
+      <a href="mailto:support@beefourbitcoin.com">support@beefourbitcoin.com</a>
+      <a href="/satoshisanta/">English Version</a>
+      <a href="https://www.beefourbitcoin.com/">beefourbitcoin.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const REINDEER = [
+      { name: 'Dasher',    role: 'Ledersprinter',   art: '/satoshisanta/assets/harvesters/dasher.png',         active: true },
+      { name: 'Dancer',    role: 'Snøfnuggvever',   art: '/satoshisanta/assets/harvesters/snowflake.png',      active: true },
+      { name: 'Prancer',   role: 'Bjelleklang',     art: '/satoshisanta/assets/harvesters/prancer.png',        active: true },
+      { name: 'Vixen',     role: 'Stjernelos',      art: '/satoshisanta/assets/harvesters/vixen.png',          active: true },
+      { name: 'Comet',     role: 'Polarnattvakt',   art: '/satoshisanta/assets/harvesters/comet.png',          active: true },
+      { name: 'Cupid',     role: 'Gruvevokter',     art: '/satoshisanta/assets/harvesters/cupid.png',          active: true },
+      { name: 'Zephyr',    role: 'Arktisk vind',    art: '/satoshisanta/assets/harvesters/zephyr.png',         active: true },
+      { name: 'Blitzen',   role: 'Gnistsprinter',   art: '/satoshisanta/assets/harvesters/lightninghorns.png', active: true },
+      { name: 'Rudolph',   role: 'Tåkebryter',      art: '/satoshisanta/assets/harvesters/rudolph.png',        active: true },
+      { name: 'Mistletoe', role: 'Kristtorn-speider', art: '/satoshisanta/assets/harvesters/mistletoe.png',    active: true },
+      { name: 'Clarion',   role: 'Gullklokke-herold', art: '/satoshisanta/assets/harvesters/bellmouth.png',    active: true },
+      { name: 'Aurora',    role: 'Nordlys-anker',   art: '/satoshisanta/assets/harvesters/aurora.png',         active: true },
+    ];
+
+    let odoValue = 5280;
+
+    function renderReindeerPips() {
+      const container = document.getElementById('reindeerPips');
+      container.innerHTML = '';
+      const activeCount = REINDEER.filter((r) => r.active).length;
+
+      REINDEER.forEach((r, idx) => {
+        const div = document.createElement('div');
+        div.className = 'r-pip' + (r.active ? ' active' : '');
+        div.onclick = () => {
+          REINDEER[idx].active = !REINDEER[idx].active;
+          renderReindeerPips();
+        };
+        div.innerHTML = `<img src="${r.art}" alt="${r.name}" loading="lazy" /><b>${r.name}</b><small>${r.active ? 'Spent for' : r.role}</small>`;
+        container.appendChild(div);
+      });
+
+      const ttl = document.getElementById('simStageTitle');
+      const rateBadge = document.getElementById('liveOdoRate');
+      const speed = (0.4 + activeCount * 1.1 + (activeCount === 12 ? 3.0 : 0)).toFixed(1).replace('.', ',');
+
+      if (activeCount === 12) {
+        ttl.textContent = 'Alle 12 reinsdyr svever i samlet flukt';
+        rateBadge.textContent = `+${speed} sats/s i full Nordlys-overdrive`;
+      } else if (activeCount >= 7) {
+        ttl.textContent = `${activeCount} reinsdyr i galopp mens sleden løfter seg`;
+        rateBadge.textContent = `+${speed} sats/s i galoppflukt`;
+      } else if (activeCount >= 1) {
+        ttl.textContent = `${activeCount} reinsdyr spent for og spinner sledehjulene`;
+        rateBadge.textContent = `+${speed} sats/s i trav`;
+      } else {
+        ttl.textContent = 'Sleden står parkert på gårdsplassen — velg et reinsdyr å spenne for';
+        rateBadge.textContent = `+0,4 sats/s i hvile`;
+      }
+    }
+
+    setInterval(() => {
+      const activeCount = REINDEER.filter((r) => r.active).length;
+      const step = Math.max(1, Math.round(activeCount * 0.6 + (activeCount === 12 ? 3 : 0)));
+      odoValue = (odoValue + step) % 1000000;
+      const str = String(odoValue).padStart(6, '0');
+      const reels = document.querySelectorAll('#liveOdoDigits .odo-reel');
+      reels.forEach((el, i) => {
+        if (el.textContent !== str[i]) {
+          el.textContent = str[i];
+          el.classList.add('bump');
+          setTimeout(() => el.classList.remove('bump'), 110);
+        }
+      });
+    }, 380);
+
+    renderReindeerPips();
+  </script>
+</body>
+</html>
