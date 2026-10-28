@@ -31,11 +31,14 @@ facebook.com, 2224046271881518, DIRECT, c3e20eee3f780d68
 fbadmanager.com, 2224046271881518, DIRECT, f223c113d09e74fb
 facebook.com, 2188116495457649, DIRECT, c3e20eee3f780d68
 fbadmanager.com, 2188116495457649, DIRECT, f223c113d09e74fb
+OwnerDomain=beefourbitcoin.com
 #Pangle
-pangleglobal.com, 5039520, DIRECT                
+pangleglobal.com, 5039520, DIRECT
+bytedance.com, 8835029, DIRECT, a70f2eb040bb26f4
 pubmatic.com, 161490, RESELLER, 5d62403b186f2ac
 #Unity Ads
 unity.com, 3574409756872, DIRECT, 96cabb5fbdde37a7
+unity.com, 119238160, DIRECT, 96cabb5fbdde37a7
 #Liftoff (Vungle)
 vungle.com, 6ae1eb8e008cfe5bdcef675b, DIRECT, c107d686becd2d77
 #Add other networks if applicable
@@ -2708,3 +2711,78 @@ spinx.biz, 1373698890, RESELLER
 video.unrulymedia.com, 475093422, RESELLER
 rubiconproject.com, 27714, RESELLER, 0bfd66d529a55807
 orbrx.ai, 8000869124, RESELLER
+#Pangle & Unity Resellers (Added Oct 28 2026)
+opera.com,pub13738037153024,RESELLER,55a0c5fd61378de3
+rubiconproject.com,28299,RESELLER,0bfd66d529a55807
+taurusx.com,80068, RESELLER
+openx.com,540679900,RESELLER
+conversantmedia.com,100358,RESELLER
+rubiconproject.com,25978,RESELLER
+axonix.com, 59202, RESELLER
+aceex.io,2577, RESELLER, b1cf3c874d5c6682
+lijit.com,530498,RESELLER
+pubmatic.com,164289, RESELLER, 5d62403b186f2ace
+start.io, 158727715, RESELLER
+nativo.com, 5958, RESELLER, 59521ca7cc5e9fee
+display.io, 236374, RESELLER
+media.net, 8CUF7U34W, RESELLER
+pubmatic.com, 167346, RESELLER, 5d62403b186f2ace
+bidmachine.io,1561,RESELLER
+bidmachine.io,1560,RESELLER
+bidmachine.io,1539,RESELLER
+mobupps.com,c74d97b01eae257e44aa9d5bade97baf33149,RESELLER
+indexexchange.com,216408,RESELLER,50b1c356f2c5c8fc
+triplelift.com, 14716, RESELLER, 6c33edb13117fd86
+triplelift.com, 95054, RESELLER, 6c33edb13117fd86
+smartadserver.com, 5828-OB, RESELLER, 060d053dcf45cbf3
+rubiconproject.com, 13380, RESELLER, 0bfd66d529a55807
+jcprog.com, pub-4518750432, RESELLER
+sharethrough.com, UvcAx8IL, RESELLER, d53b998a7bd4ecd2
+smartadserver.com, 4972, RESELLER, 060d053dcf45cbf3
+onlinemediasolutions.com, 23120, RESELLER, b3868b187e4b6402
+smartadserver.com, 5828, RESELLER, 060d053dcf45cbf3
+bluexad.ai, 1996418805747683328, RESELLER
+sharethrough.com, 3713, RESELLER, d53b998a7bd4ecd2
+smaato.com, 1100055750, RESELLER, 07bcf65f187117b4
+smartadserver.com, 4578, RESELLER, 060d053dcf45cbf3
+bold-win.com, 165, RESELLER, 71746737d0bab951
+media.net, 8CU675N41, RESELLER
+start.io, 197760873, RESELLER
+risecodes.com, 68d54e2fe125150001dd91e2, RESELLER
+zetaglobal.net, 630, RESELLER
+appnexus.com, 11826, RESELLER, f5ab79cb980f11d1
+google.com, pub-1682595508078257, RESELLER, f08c47fec0942fa0
+taurusx.com, 70079, RESELLER
+rubiconproject.com, 17062, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 24084, RESELLER, 0bfd66d529a55807
+sharethrough.com, 5828, RESELLER, d53b998a7bd4ecd2
+media.net, 8cu355vs4, RESELLER
+conversantmedia.com, 41024, RESELLER, 03113cd04947736d
+triplelift.com, 14798, RESELLER, 6c33edb13117fd86
+anzu.io, 691e95644e633a6eee2567ee, RESELLER, 1c1b7acf4992136c
+contextweb.com, 558622, RESELLER, 89ff185a4c4e857c
+lijit.com, 528770, RESELLER, fafdf38b16bf6b2b
+video.unrulymedia.com, 144138083, RESELLER
+smartclip.net, 13564, RESELLER
+pubnative.net, 1017792, RESELLER, d641df8625486a7b
+targetbetter.com, 82228, RESELLER
+tredio.io, 357a6fdf7642bf815a88822c447d9dc436891, RESELLER
+video.unrulymedia.com, 703273072, RESELLER
+adform.com, 3400, RESELLER, 9f5210a2f0999e32
+pubmatic.com, 165854, RESELLER, 5d62403b186f2ace
+pubmatic.com, 163117, RESELLER, 5d62403b186f2ace
+smartadserver.com, 4525, RESELLER, 060d053dcf45cbf3
+rubiconproject.com, 28169, RESELLER, 0bfd66d529a55807
+ogury.com, 065d4ff5-a269-44be-9634-9d4d7af2dfc3, RESELLER
+app-stock.com, 358747, RESELLER
+blueseasx.com, 203625, RESELLER
+sharethrough.com, 5828-OB, RESELLER, d53b998a7bd4ecd2
+bidmachine.io, 1371, RESELLER
+programmaticx.ai, 84448, RESELLER, b42d42eb28400efa
+e-planning.net, 6a7f877127485fdb, RESELLER, c1ba615865ed87b2
+appnexus.com, 14230, RESELLER, f5ab79cb980f11d1
+insticator.com, cadff748-965f-4393-a76e-a8f902512bad, RESELLER, b3511ffcafb23a32
+odeeo.io, 118848844, RESELLER, 36cfd73091d5c3fc
+inmobi.com, 23d316d3d980453d8ea0dcf9caec4078, RESELLER, 83e75a7ae333ca9d
+pubnative.net, 1009458, RESELLER, d641df8625486a7b
+openx.com, 563905670, RESELLER, 6a698e2ec38604c6
