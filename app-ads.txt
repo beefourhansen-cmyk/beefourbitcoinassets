@@ -36,6 +36,8 @@ pangleglobal.com, 5039520, DIRECT
 pubmatic.com, 161490, RESELLER, 5d62403b186f2ac
 #Unity Ads
 unity.com, 3574409756872, DIRECT, 96cabb5fbdde37a7
+#Liftoff (Vungle)
+vungle.com, 6ae1eb8e008cfe5bdcef675b, DIRECT, c107d686becd2d77
 #Add other networks if applicable
 #Resellers
 152media.info, 152M312, RESELLER
