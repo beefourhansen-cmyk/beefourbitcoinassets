@@ -1,11 +1,27 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.beefour.cricketcrypto",
-      "sha256_cert_fingerprints":
-        ["6E:0E:1E:56:1A:85:A7:30:50:55:3C:B1:5E:ED:B1:8A:6E:1B:49:37:D1:FB:25:5C:5C:87:24:63:A4:18:BA:B9"]
+      "sha256_cert_fingerprints": [
+        "6E:0E:1E:56:1A:85:A7:30:50:55:3C:B1:5E:ED:B1:8A:6E:1B:49:37:D1:FB:25:5C:5C:87:24:63:A4:18:BA:B9"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.beefour.penguinprotocol",
+      "sha256_cert_fingerprints": [
+        "52:7E:16:5C:45:64:17:15:BF:11:76:09:A3:E7:F3:E6:23:27:36:3B:86:58:E9:E4:3F:45:C8:D4:DA:AE:2F:10"
+      ]
     }
   }
 ]
