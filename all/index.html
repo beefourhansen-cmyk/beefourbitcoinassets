@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeeFour Bitcoin Arcade — All 8 Mobile Sats Games</title>
+  <meta name="description" content="Explore all 8 mobile Bitcoin rewards games by Bee Four Inc.: BeeFour Bitcoin, Bitcoin Snowman, Satoshi Santa, Spooky Satoshis, Pumpkin Protocol, Penguin Protocol, Maneki-Neko Miner, and Cricket Crypto Pro." />
+  <meta property="og:title" content="BeeFour Bitcoin Arcade — All 8 Mobile Sats Games" />
+  <meta property="og:description" content="Eight distinct worlds. One mission: stack real Satoshis, collect rare bots and traits, and give back." />
+  <meta property="og:image" content="https://www.beefourbitcoin.com/feature_graphic.png" />
+  <link rel="canonical" href="https://www.beefourbitcoin.com/all/" />
+  <meta name="theme-color" content="#060705" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #060705;
+      --bg-elevated: #0d0f0b;
+      --surface: rgba(19, 21, 15, 0.86);
+      --surface-hover: rgba(26, 29, 20, 0.96);
+      --gold: #f8c84e;
+      --gold-deep: #d49a20;
+      --text: #fcf8ec;
+      --muted: #b4ab93;
+      --subtle: #78705c;
+      --border: rgba(248, 200, 78, 0.16);
+      --max: 1260px;
+      --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 18% 0%, rgba(248, 200, 78, 0.13), transparent 38rem),
+        radial-gradient(circle at 85% 12%, rgba(56, 189, 248, 0.09), transparent 36rem),
+        radial-gradient(circle at 50% 95%, rgba(249, 115, 22, 0.08), transparent 42rem);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Sticky Top Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(6, 7, 5, 0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      box-shadow: 0 0 24px rgba(248, 200, 78, 0.3);
+    }
+
+    .brand-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(248, 200, 78, 0.14);
+      color: var(--gold);
+      border: 1px solid rgba(248, 200, 78, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+      color: #120e04;
+      box-shadow: 0 10px 26px rgba(248, 200, 78, 0.22);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      background: rgba(248, 200, 78, 0.08);
+    }
+
+    /* Hero Header */
+    .hero {
+      padding: 64px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 32px;
+      align-items: end;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.8vw, 4.1rem);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: clamp(1rem, 1.35vw, 1.16rem);
+      max-width: 64ch;
+      margin: 0;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .stat-box b {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      color: var(--gold);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .stat-box span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 24px 0 28px;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.16s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--text);
+      border-color: rgba(248, 200, 78, 0.4);
+    }
+
+    .filter-btn.active {
+      background: var(--gold);
+      color: #120e04;
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    .filter-count {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* 8-App Bento Showcase Grid */
+    .arcade-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      padding-bottom: 68px;
+    }
+
+    .game-card {
+      --accent: #f8c84e;
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .game-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 36px color-mix(in srgb, var(--accent) 22%, transparent);
+    }
+
+    .game-banner {
+      position: relative;
+      aspect-ratio: 1024 / 460;
+      background: #090b08;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .game-banner img.banner-art {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .game-card:hover .game-banner img.banner-art {
+      transform: scale(1.03);
+    }
+
+    .game-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 7, 5, 0.05) 35%, rgba(13, 15, 11, 0.92) 100%);
+      pointer-events: none;
+    }
+
+    .game-realm-pill {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 2;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      background: rgba(6, 7, 5, 0.78);
+      backdrop-filter: blur(10px);
+      color: var(--accent);
+      border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    }
+
+    .game-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 24px;
+      margin-top: -28px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .game-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      background: #0b0d09;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+      flex-shrink: 0;
+    }
+
+    .game-title-wrap h2 {
+      font-family: var(--font-display);
+      font-size: 1.42rem;
+      margin: 0 0 2px;
+      line-height: 1.15;
+    }
+
+    .game-title-wrap .pkg-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .game-body {
+      padding: 16px 24px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .game-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .game-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .game-chip {
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+    }
+
+    .game-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .btn-site {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .btn-site:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-play {
+      background: color-mix(in srgb, var(--accent) 18%, #12150f);
+      color: var(--text);
+      border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+    }
+
+    .btn-play:hover {
+      background: var(--accent);
+      color: #090a07;
+    }
+
+    /* Ecosystem Footer */
+    .trust-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .trust-banner h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      margin: 0 0 6px;
+    }
+
+    .trust-banner p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 62ch;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0 48px;
+      color: var(--subtle);
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .arcade-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .shell { width: calc(100% - 24px); }
+      .hero { padding-top: 36px; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .game-actions { grid-template-columns: 1fr; }
+      .game-header { padding: 0 18px; }
+      .game-body { padding: 14px 18px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="/">
+        <img src="/icon.png" alt="BeeFour Bitcoin" />
+        <span>BeeFour Bitcoin</span>
+        <span class="brand-badge">All 8 Games</span>
+      </a>
+      <div class="nav-links">
+        <a href="/">Flagship App</a>
+        <a href="/bitcoinsnowman/">Snowman</a>
+        <a href="/satoshisanta/">Santa</a>
+        <a href="/spookysatoshis/">Spooky</a>
+        <a href="/pumpkinprotocol/">Pumpkin</a>
+        <a href="/penguinprotocol/">Penguin</a>
+        <a href="/manekineko/">Maneki-Neko</a>
+        <a href="/cricket/">Cricket</a>
+      </div>
+      <a class="btn btn-outline" href="/#privacy">Privacy &amp; Terms</a>
+    </div>
+  </nav>
+
+  <main class="shell">
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Eight Worlds.<br />One Satoshi Arcade.</h1>
+          <p>Every Bee Four Inc. mobile game combines a live 16-decimal Bitcoin odometer, collectible companions, verifiable in-app progression, and real Satoshi rewards you can withdraw or donate to verified causes.</p>
+        </div>
+        <div class="hero-stats" aria-label="Portfolio highlights">
+          <div class="stat-box">
+            <b>8 Apps</b>
+            <span>Live on Android</span>
+          </div>
+          <div class="stat-box">
+            <b>16-Dec</b>
+            <span>Live BTC Odometer</span>
+          </div>
+          <div class="stat-box">
+            <b>Real Sats</b>
+            <span>Withdraw or Donate</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="filter-bar" role="region" aria-label="Filter games by theme">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all" type="button">All 8 Games</button>
+        <button class="filter-btn" data-filter="winter" type="button">Winter &amp; Arctic (3)</button>
+        <button class="filter-btn" data-filter="autumn" type="button">Autumn &amp; Crypt (2)</button>
+        <button class="filter-btn" data-filter="world" type="button">Flagship, Shrine &amp; Stadium (3)</button>
+      </div>
+      <div class="filter-count" id="filterCount">Showing all 8 games</div>
+    </div>
+
+    <section class="arcade-grid" id="arcadeGrid" aria-label="BeeFour Bitcoin Apps">
+
+      <!-- 1. BeeFour Bitcoin (Original Flagship) -->
+      <article class="game-card" data-category="world" style="--accent: #f8c84e;">
+        <a class="game-banner" href="/">
+          <img class="banner-art" src="/feature_graphic.png" alt="BeeFour Bitcoin Feature Banner" loading="lazy" />
+          <span class="game-realm-pill">Original Flagship</span>
+        </a>
+        <div class="game-header">
+          <img class="game-icon" src="/icon.png" alt="BeeFour Bitcoin Icon" />
+          <div class="game-title-wrap">
+            <h2>BeeFour Bitcoin</h2>
+            <div class="pkg-sub">Golden Hive · HoneyBee Collectibles</div>
+          </div>
+        </div>
+        <div class="game-body">
+          <p class="game-desc">The original bee-powered Bitcoin rewards game. Activate Worker, Scout, and Queen Bee bots, mint rare HoneyBee traits, and withdraw sats via Lightning or donate to verified charities.</p>
+          <div class="game-features">
+            <span class="game-chip">5 Bee Bot Tiers</span>
+            <span class="game-chip">HoneyBee Minting</span>
+            <span class="game-chip">Charity Give-Back</span>
+          </div>
+          <div class="game-actions">
+            <a class="btn btn-site" href="/">Explore Website</a>
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoin" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Bitcoin Snowman: Sats Stacker -->
+      <article class="game-card" data-category="winter" style="--accent: #38bdf8;">
+        <a class="game-banner" href="/bitcoinsnowman/">
+          <img class="banner-art" src="/bitcoinsnowman/assets/hero-winter.jpg" alt="Bitcoin Snowman Feature Banner" loading="lazy" />
+          <span class="game-realm-pill">Winter &amp; Summer Worlds</span>
+        </a>
+        <div class="game-header">
+          <img class="game-icon" src="/bitcoinsnowman/assets/icon-winter.png" alt="Bitcoin Snowman Icon" />
+          <div class="game-title-wrap">
+            <h2>Bitcoin Snowman: Sats Stacker</h2>
+            <div class="pkg-sub">12 Snowman Parts · Summer Quest Skin</div>
+          </div>
+        </div>
+        <div class="game-body">
+          <p class="game-desc">Mint all 12 free Snowman parts from Base Snowball to Golden Bitcoin Crown, toggle the Tropical Summer Quest world skin (+25% boost), and protect your streak in the Frosty Freezer Vault.</p>
+          <div class="game-features">
+            <span class="game-chip">12 Free Parts</span>
+            <span class="game-chip">Summer Quest Skin</span>
+            <span class="game-chip">Frosty Freezer Vault</span>
+          </div>
+          <div class="game-actions">
+            <a class="btn btn-site" href="/bitcoinsnowman/">Explore Website</a>
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoinsnowman" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Satoshi Santa -->
+      <article class="game-card" data-category="winter" style="--accent: #ef4444;">
+        <a class="game-banner" href="/satoshisanta/">
+          <img class="banner-art" src="/satoshisanta/assets/gallery/banner-arctic-fjord-btc.jpg" alt="Satoshi Santa Feature Banner" loading="lazy" />
+          <span class="game-realm-pill">North Pole Workshop</span>
+        </a>
+        <div class="game-header">
+          <img class="game-icon" src="/satoshisanta/assets/gallery/crest-sovereign-btc.png" alt="Satoshi Santa Icon" />
+          <div class="game-title-wrap">
+            <h2>Satoshi Santa</h2>
+            <div class="pkg-sub">12 Reindeer Harness · Snow Globe Mint</div>
+          </div>
+        </div>
+        <div class="game-body">
+          <p class="game-desc">Wake all 12 reindeer into harness at the North Pole workshop, push the sleigh reels into Full Aurora Overdrive, and mint rare heirloom Snow Globe ornaments while stacking Satoshis.</p>
+          <div class="game-features">
+            <span class="game-chip">12 Reindeer Fleet</span>
+            <span class="game-chip">Aurora Overdrive</span>
+            <span class="game-chip">Snow Globe Vault</span>
+          </div>
+          <div class="game-actions">
+            <a class="btn btn-site" href="/satoshisanta/">Explore Website</a>
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Spooky Satoshis -->
+      <article class="game-card" data-category="autumn" style="--accent: #a855f7;">
+        <a class="game-banner" href="/spookysatoshis/">
+          <img class="banner-art" src="/spookysatoshis/feature.png" alt="Spooky Satoshis Feature Banner" loading="lazy" />
+          <span class="game-realm-pill">Spectral Crypt</span>
+        </a>
+        <div class="game-header">
+          <img class="game-icon" src="/spookysatoshis/icon.png" alt="Spooky Satoshis Icon" />
+          <div class="game-title-wrap">
+            <h2>Spooky Satoshis</h2>
+            <div class="pkg-sub">Haunted Crypt · Spectral Haunters</div>
+          </div>
+        </div>
+        <div class="game-body">
+          <p class="game-desc">Summon spectral haunters inside the midnight crypt, awaken the glowing Mallow Medallion, and harvest eerie Satoshis with supernatural multipliers and crypt pass protection.</p>
+          <div class="game-features">
+            <span class="game-chip">Spectral Haunters</span>
+            <span class="game-chip">Mallow Medallion</span>
+            <span class="game-chip">Crypt Vault</span>
+          </div>
+          <div class="game-actions">
+            <a class="btn btn-site" href="/spookysatoshis/">Explore Website</a>
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.spookysatoshis" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Pumpkin Protocol -->
+      <article class="game-card" data-category="autumn" style="--accent: #f97316;">
+        <a class="game-banner" href="/pumpkinprotocol/">
+          <img class="banner-art" src="/pumpkinprotocol/featureimage.png" alt="Pumpkin Protocol Feature Banner" loading="lazy" />
+          <span class="game-realm-pill">Autumn Harvest</span>
+        </a>
+        <div class="game-header">
+          <img class="game-icon" src="/pumpkinprotocol/mallow.png" alt="Pumpkin Protocol Icon" />
+          <div class="game-title-wrap">
+            <h2>Pumpkin Protocol</h2>
+            <div class="pkg-sub">Cozy Grove · Harvester Squad</div>
+          </div>
+        </div>
+        <div class="game-body">
+          <p class="game-desc">Build a cozy autumn squad of Harvesters from Acorn Sprouts to Barnaby Squirrel, tend your golden pumpkin grove, and harvest real Satoshis all season long.</p>
+          <div class="game-features">
+            <span class="game-chip">Harvester Squad</span>
+            <span class="game-chip">Golden Grove</span>
+            <span class="game-chip">Harvest Charms</span>
+          </div>
+          <div class="game-actions">
+            <a class="btn btn-site" href="/pumpkinprotocol/">Explore Website</a>
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.pumpkinprotocol" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Penguin Protocol -->
+      <article class="game-card" data-category="winter" style="--accent: #22d3ee;">
+        <a class="game-banner" href="/penguinprotocol/">
+          <img class="banner-art" src="/penguinprotocol/webassets/pengfeatureimage.png" alt="Penguin Protocol Feature Banner" loading="lazy" />
+          <span class="game-realm-pill">Antarctic Colony</span>
+        </a>
+        <div class="game-header">
+          <img class="game-icon" src="/penguinprotocol/webassets/icon.png" alt="Penguin Protocol Icon" />
+          <div class="game-title-wrap">
+            <h2>Penguin Protocol</h2>
+            <div class="pkg-sub">Sub-Zero Colony · Glacier Cards</div>
+          </div>
+        </div>
+        <div class="game-body">
+          <p class="game-desc">Chill out and mine the cold. Wake your Antarctic colony from Rookie Rockhopper to Emperor Bot, mint collectible penguin cards, and keep your sub-zero rig humming.</p>
+          <div class="game-features">
+            <span class="game-chip">Emperor &amp; Aurora Bots</span>
+            <span class="game-chip">Penguin Card Mint</span>
+            <span class="game-chip">Ice Vault Pass</span>
+          </div>
+          <div class="game-actions">
+            <a class="btn btn-site" href="/penguinprotocol/">Explore Website</a>
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.penguinprotocol" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Maneki-Neko Miner -->
+      <article class="game-card" data-category="world" style="--accent: #f43f5e;">
+        <a class="game-banner" href="/manekineko/">
+          <img class="banner-art" src="/manekineko/webassets/featuregraphic.png" alt="Maneki-Neko Miner Feature Banner" loading="lazy" />
+          <span class="game-realm-pill">Golden Shrine</span>
+        </a>
+        <div class="game-header">
+          <img class="game-icon" src="/manekineko/webassets/icon.png" alt="Maneki-Neko Miner Icon" />
+          <div class="game-title-wrap">
+            <h2>Maneki-Neko Miner</h2>
+            <div class="pkg-sub">Lucky Cat Shrine · Omamori Charms</div>
+          </div>
+        </div>
+        <div class="game-body">
+          <p class="game-desc">Your lucky cat never stops beckoning. Awaken guardian Neko tiers across your lantern-lit shrine, collect sacred Omamori charms, and earn Bitcoin one lucky paw at a time.</p>
+          <div class="game-features">
+            <span class="game-chip">Guardian Neko Tiers</span>
+            <span class="game-chip">Omamori Charms</span>
+            <span class="game-chip">Shrine Blessings</span>
+          </div>
+          <div class="game-actions">
+            <a class="btn btn-site" href="/manekineko/">Explore Website</a>
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.manekineko" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. Cricket Crypto Pro -->
+      <article class="game-card" data-category="world" style="--accent: #10b981;">
+        <a class="game-banner" href="/cricket/">
+          <img class="banner-art" src="/cricket/webassets/feature.png" alt="Cricket Crypto Pro Feature Banner" loading="lazy" />
+          <span class="game-realm-pill">Championship Pitch</span>
+        </a>
+        <div class="game-header">
+          <img class="game-icon" src="/cricket/webassets/icon.png" alt="Cricket Crypto Pro Icon" />
+          <div class="game-title-wrap">
+            <h2>Cricket Crypto Pro</h2>
+            <div class="pkg-sub">Squad Strategy · Run-Rate Mining</div>
+          </div>
+        </div>
+        <div class="game-body">
+          <p class="game-desc">Draft your cricket squad from Net Bowlers to Century Strikers, boost your stadium Run Rate, and stack real Satoshis across every over in a fast-paced cricket strategy idle game.</p>
+          <div class="game-features">
+            <span class="game-chip">Cricket Squad Draft</span>
+            <span class="game-chip">Run-Rate Multiplier</span>
+            <span class="game-chip">Pavilion Vault</span>
+          </div>
+          <div class="game-actions">
+            <a class="btn btn-site" href="/cricket/">Explore Website</a>
+            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.cricketcrypto" target="_blank" rel="noopener">Google Play</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <aside class="trust-banner" aria-label="Privacy and Transparency">
+      <div>
+        <h3>Unified Privacy, Consent &amp; Transparency</h3>
+        <p>All 8 Bee Four Inc. apps share our unified Trust Center, Google UMP privacy controls, and verified <code>app-ads.txt</code> inventory declarations.</p>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-outline" href="/#privacy">Privacy Policy</a>
+        <a class="btn btn-outline" href="/#ccpa-opt-out">Do Not Sell My Info</a>
+        <a class="btn btn-gold" href="/">Back to BeeFour Home</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>
+        <strong style="color:var(--gold);">Bee Four Inc.</strong> · Vancouver, BC, Canada · © 2026 All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="/">BeeFour Home</a>
+        <a href="/#privacy">Privacy Policy</a>
+        <a href="/#terms">Terms of Use</a>
+        <a href="/#ccpa-opt-out">US State Privacy</a>
+        <a href="/app-ads.txt">app-ads.txt</a>
+        <a href="mailto:beefourbitcoin@gmail.com">beefourbitcoin@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.game-card');
+      const countEl = document.getElementById('filterCount');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          buttons.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+          let shown = 0;
+          cards.forEach((card) => {
+            const match = filter === 'all' || card.getAttribute('data-category') === filter;
+            card.style.display = match ? 'flex' : 'none';
+            if (match) shown++;
+          });
+          countEl.textContent = filter === 'all'
+            ? 'Showing all 8 games'
+            : 'Showing ' + shown + ' of 8 games';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
