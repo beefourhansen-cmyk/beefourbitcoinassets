@@ -31,16 +31,22 @@ facebook.com, 2224046271881518, DIRECT, c3e20eee3f780d68
 fbadmanager.com, 2224046271881518, DIRECT, f223c113d09e74fb
 facebook.com, 2188116495457649, DIRECT, c3e20eee3f780d68
 fbadmanager.com, 2188116495457649, DIRECT, f223c113d09e74fb
+facebook.com, 1455901236720799, DIRECT, c3e20eee3f780d68
+fbadmanager.com, 1455901236720799, DIRECT, f223c113d09e74fb
 OwnerDomain=beefourbitcoin.com
 #Pangle
 pangleglobal.com, 5039520, DIRECT
 bytedance.com, 8835029, DIRECT, a70f2eb040bb26f4
+bytedance.com, 8919440, DIRECT, a70f2eb040bb26f4
+bytedance.com, 8929673, DIRECT, a70f2eb040bb26f4
 pubmatic.com, 161490, RESELLER, 5d62403b186f2ac
 #Unity Ads
 unity.com, 3574409756872, DIRECT, 96cabb5fbdde37a7
 unity.com, 119238160, DIRECT, 96cabb5fbdde37a7
+unity.com, 800429123, DIRECT, 96cabb5fbdde37a7
 #Liftoff (Vungle)
 vungle.com, 6ae1eb8e008cfe5bdcef675b, DIRECT, c107d686becd2d77
+vungle.com, 6af02f6e87c6a6b64c8f6f9a, DIRECT, c107d686becd2d77
 #Add other networks if applicable
 #Resellers
 152media.info, 152M312, RESELLER

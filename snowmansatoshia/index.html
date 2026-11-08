@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bitcoin Snowman: Sats Stacker — Build Your Snowman & Stack Sats</title>
+  <meta name="description" content="Stack sats and build your crypto snowman part by part in Bitcoin Snowman: Sats Stacker by Bee Four Inc. Assemble 12 free snowman parts, unlock the Tropical Summer Quest World Skin, and protect your stack in the Frosty Freezer Vault!" />
+  <meta name="theme-color" content="#07131E" />
+  <meta property="og:title" content="Bitcoin Snowman: Sats Stacker — Festive Holiday Idle Simulator" />
+  <meta property="og:description" content="Assemble 12 frosty snowman parts, unleash the 16-decimal BeeFour Odometer, and switch between Winter Aurora Wonderland & Tropical Summer Beach Quest!" />
+  <meta property="og:image" content="assets/hero-winter.jpg" />
+  <style>
+    :root {
+      --bg: #07131E;
+      --bg-deep: #040B12;
+      --surface: #0F2233;
+      --card: #0B1A28;
+      --line: #1B364F;
+      --snow: #F4F9FC;
+      --muted: #8EB2CC;
+      --dim: #5E829E;
+      --gold: #FFE066;
+      --amber: #F5B700;
+      --emerald: #2EE59D;
+      --cyan: #38BDF8;
+      --coral: #FB923C;
+      --font: Calibri, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --display: "Trebuchet MS", Calibri, Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+    body.summer-theme {
+      --bg: #08202B;
+      --bg-deep: #04131A;
+      --surface: #103242;
+      --card: #0C2532;
+      --line: #215169;
+      --cyan: #FB923C;
+      --emerald: #FDE047;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse 90% 45% at 50% -5%, rgba(46, 229, 157, 0.18), transparent 65%),
+        radial-gradient(ellipse 70% 40% at 85% 15%, rgba(56, 189, 248, 0.15), transparent 60%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 45%, #061522 100%);
+      color: var(--snow);
+      font-family: var(--font);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.35s ease;
+    }
+    h1, h2, h3, h4 { font-family: var(--display); letter-spacing: -0.01em; margin-top: 0; }
+    .shell { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(4, 11, 18, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1.5px solid var(--line);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 74px; gap: 16px; flex-wrap: wrap;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--snow);
+      font-weight: 900; font-size: 18px;
+    }
+    .brand img { width: 46px; height: 46px; border-radius: 12px; border: 1.5px solid var(--gold); }
+    .brand small { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); }
+    .nav-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-weight: 700; font-size: 14px; }
+    .nav-links a:hover { color: var(--gold); }
+    .skin-btn {
+      cursor: pointer; border: 1.5px solid var(--gold); background: rgba(255, 224, 102, 0.15);
+      color: var(--gold); font-weight: 900; padding: 8px 14px; border-radius: 999px; font-size: 12px;
+    }
+    .hero { padding: 48px 0 36px; }
+    .hero-banner {
+      width: 100%; border-radius: 24px; overflow: hidden;
+      border: 2px solid var(--gold); box-shadow: 0 18px 50px rgba(0,0,0,0.6);
+      margin-bottom: 28px;
+    }
+    .hero-banner img { width: 100%; display: block; height: auto; }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 28px; align-items: center; }
+    @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+    .pill {
+      display: inline-block; padding: 5px 12px; border-radius: 999px;
+      background: rgba(46, 229, 157, 0.16); border: 1px solid var(--emerald);
+      color: var(--emerald); font-size: 11px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 20px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; border-radius: 14px; font-weight: 900; text-decoration: none;
+      font-size: 14px; border: 2px solid transparent; cursor: pointer;
+    }
+    .btn-primary { background: var(--amber); color: #040B12; border-color: var(--gold); }
+    .btn-ghost { background: var(--surface); color: var(--snow); border-color: var(--line); }
+    .section { padding: 42px 0; border-top: 1px solid var(--line); }
+    .grid-12 {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); gap: 16px; margin-top: 22px;
+    }
+    .card {
+      background: var(--card); border: 1.5px solid var(--line); border-radius: 18px;
+      padding: 16px; text-align: center; transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover { transform: translateY(-3px); border-color: var(--gold); }
+    .card img { width: 88px; height: 88px; border-radius: 18px; border: 1.5px solid var(--gold); margin-bottom: 10px; }
+    .card h4 { margin: 4px 0 2px; font-size: 14px; color: var(--snow); }
+    .card p { margin: 0; font-size: 11.5px; color: var(--muted); }
+    .feature-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center;
+    }
+    @media (max-width: 860px) { .feature-split { grid-template-columns: 1fr; } }
+    .feature-split img { width: 100%; border-radius: 22px; border: 2px solid var(--cyan); }
+    .sister-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 14px; margin-top: 20px;
+    }
+    .privacy-box {
+      background: var(--card); border: 1.5px solid var(--line); border-radius: 18px; padding: 26px;
+    }
+    footer { padding: 36px 0 54px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="shell nav-inner">
+      <a href="#" class="brand">
+        <img id="brandIcon" src="assets/icon-winter.png" alt="Bitcoin Snowman Icon" />
+        <div>
+          BITCOIN SNOWMAN
+          <small id="brandSub">Sats Stacker · Winter & Summer Quest</small>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#parts">12 Snowman Parts</a>
+        <a href="#skins">World Skins & Mints</a>
+        <a href="#freezer">Frosty Freezer Vault</a>
+        <a href="#sister">Sister Worlds</a>
+        <a href="#privacy">Privacy Policy</a>
+        <button class="skin-btn" onclick="toggleTheme()" id="skinToggleBtn">🏖️ Preview Summer Quest Skin</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-banner">
+        <img id="heroBannerImg" src="assets/hero-winter.jpg" alt="Bitcoin Snowman Hero Banner" />
+      </div>
+      <div class="hero-grid">
+        <div>
+          <span class="pill" id="heroBadge">⛄ THE COZIEST HOLIDAY CRYPTO IDLE SIMULATOR</span>
+          <h1 style="font-size: 38px; line-height: 1.15; margin-bottom: 12px;">
+            Stack Sats &amp; Assemble Your Bitcoin Snowman Part by Part!
+          </h1>
+          <p style="color: var(--muted); font-size: 16px; margin-bottom: 14px;">
+            Step into a frost-covered winter wonderland under the glowing Northern Lights — or flip on our first-ever paid world skin, <strong>Summer Quest: Tropical Beach World</strong>, and celebrate the holidays in board shorts and sunglasses!
+          </p>
+          <p style="color: var(--muted); font-size: 15px;">
+            Mint all <strong>12 free rewarded Snowman Parts</strong> to send our signature 16-decimal <strong>BeeFour Bitcoin Odometer</strong> into <em>Thumpity-Thump-Thump</em> hyperdrive with stepped-up holiday dopamine haptics.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoinsnowman">
+              ▶️ Get it on Google Play
+            </a>
+            <button class="btn btn-ghost" onclick="toggleTheme()">
+              🌴 Switch Winter / Summer Quest Theme
+            </button>
+          </div>
+        </div>
+        <div class="card" style="padding: 22px;">
+          <img id="mascotCardImg" src="assets/summer-mascot.jpg" style="width: 180px; height: 180px; border-radius: 22px;" alt="Summer Quest Mascot" />
+          <h3 style="margin-top: 8px; color: var(--gold);">❄️ Winter Wonderland OR 🏖️ Tropical Beach?</h3>
+          <p style="font-size: 13px; line-height: 1.5;">
+            Whether you’re sipping hot cocoa in Scandinavia and Canada or hitting the beach in Australia and New Zealand, unlock the <strong>Summer Quest World Skin</strong> and <strong>24K Golden Cosmetics</strong> inside the Frosty Gift Shop!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="parts" class="section">
+      <span class="pill">⛄ 12 FREE MINTABLE SNOWBOT PARTS</span>
+      <h2>Assemble All 12 Parts to Unleash Maximum Odometer Velocity</h2>
+      <p style="color: var(--muted);">Every part you mint accelerates the mechanical 16-decimal BeeFour Odometer and triggers celebratory haptic waveforms:</p>
+      <div class="grid-12">
+        <div class="card"><img src="assets/part1_basesnowball.png" alt="Base Snowball" /><h4>1. Base Snowball</h4><p>Foundation Sphere</p></div>
+        <div class="card"><img src="assets/part2_midsnowball.png" alt="Mid Snowball" /><h4>2. Mid Snowball</h4><p>Core Torso</p></div>
+        <div class="card"><img src="assets/part3_headsnowball.png" alt="Head Snowball" /><h4>3. Head Snowball</h4><p>Crown Sphere</p></div>
+        <div class="card"><img src="assets/part4_coalbuttons.png" alt="Magic Coal Buttons" /><h4>4. Magic Coal Buttons</h4><p>Anthracite Studs</p></div>
+        <div class="card"><img src="assets/part5_corncobpipe.png" alt="Corncob Pipe" /><h4>5. Corncob Pipe</h4><p>2× Polar Night Watch</p></div>
+        <div class="card"><img src="assets/part6_buttonnose.png" alt="Button Nose" /><h4>6. Button Nose</h4><p>Snowfall Synergy</p></div>
+        <div class="card"><img src="assets/part7_coaleyes.png" alt="Coal Eyes" /><h4>7. Coal Eyes</h4><p>Starlight Gaze</p></div>
+        <div class="card"><img src="assets/part8_carrotnose.png" alt="Carrot Nose" /><h4>8. Carrot Nose</h4><p>Harvest Beacon</p></div>
+        <div class="card"><img src="assets/part9_goldenbranches.png" alt="Golden Arm Branches" /><h4>9. Golden Arm Branches</h4><p>24K Twig Reach</p></div>
+        <div class="card"><img src="assets/part10_satoshismile.png" alt="Satoshi Snowman Smile" /><h4>10. Satoshi Smile</h4><p>Joyful Coal Grin</p></div>
+        <div class="card"><img src="assets/part11_satoshiscarf.png" alt="Satoshi Scarf" /><h4>11. Satoshi Scarf</h4><p>Knit BTC Warmth</p></div>
+        <div class="card"><img src="assets/part12_magictophat.png" alt="Magic Tophat" /><h4>12. Magic Tophat</h4><p>Thumpity Crown</p></div>
+      </div>
+    </section>
+
+    <section id="skins" class="section">
+      <span class="pill">✨ PAID SKINS, GOLDEN COSMETICS &amp; HYPER-ACCELERATORS</span>
+      <h2>Customize Your Snowman &amp; Supercharge Your Rig</h2>
+      <div class="grid-12">
+        <div class="card"><img src="assets/summerquest_skin.png" alt="Summer Quest Skin" /><h4>Summer Quest Skin</h4><p>Tropical Beach World + 300 Sats</p></div>
+        <div class="card"><img src="assets/satoshisantacrossover.png" alt="Satoshi Santa BOGO" /><h4>2× Santa BOGO</h4><p>Holiday 2-for-$0.99 Promo</p></div>
+        <div class="card"><img src="assets/minisnowmansatbotmint.png" alt="Mini Snowman" /><h4>Mini Snowman Mint</h4><p>Starter Satbot · 100 Sats</p></div>
+        <div class="card"><img src="assets/mediumsnowmansatbotmint.png" alt="Medium Snowman" /><h4>Medium Snowman Mint</h4><p>2× Boost · 500 Sats</p></div>
+        <div class="card"><img src="assets/magictophatgoldenmint.png" alt="Golden Tophat" /><h4>Magic Tophat Gold</h4><p>24K Tophat Skin + 250 Sats</p></div>
+        <div class="card"><img src="assets/goldensatscarfmint.png" alt="Golden Scarf" /><h4>Golden Scarf Mint</h4><p>24K Scarf Skin + 250 Sats</p></div>
+        <div class="card"><img src="assets/goldenarmbranchesmint.png" alt="Golden Branches" /><h4>Golden Branches Mint</h4><p>24K Twig Skin + 250 Sats</p></div>
+        <div class="card"><img src="assets/satoshisnowflakemint.png" alt="Satoshi Snowflake" /><h4>Satoshi Snowflake</h4><p>Crystal Odometer Aura</p></div>
+        <div class="card"><img src="assets/bitcoinbroommint.png" alt="Bitcoin Broom" /><h4>Bitcoin Broom Mint</h4><p>10,000 Sats + Daily Rare+</p></div>
+        <div class="card"><img src="assets/thsacceleratormint.png" alt="TH/s Accelerator" /><h4>TH/s Accelerator</h4><p>3× Speed Monthly Sub ($49.99)</p></div>
+        <div class="card"><img src="assets/megafrostysatbotmint.png" alt="Mega Frosty Whale" /><h4>Mega Frosty ($299.99)</h4><p>300,000 Sats Whale Sovereign</p></div>
+        <div class="card"><img src="assets/72hourfreezermeltpass.png" alt="Freezer Melt Pass" /><h4>Freezer Melt Passes</h4><p>24h / 48h / 72h Cold Shield</p></div>
+      </div>
+    </section>
+
+    <section id="freezer" class="section">
+      <div class="feature-split">
+        <div>
+          <span class="pill">🧊 THE FROSTY FREEZER VAULT</span>
+          <h2>Sub-Zero Cold Storage &amp; Daily Snowfall Double</h2>
+          <p style="color: var(--muted);">
+            Check in every 24 hours for the <strong>Daily Bonus Snowfall Double</strong>, protect your streak with Evergreen Shields, and inspect your accumulated in-app satoshis inside the <strong>Frosty Freezer Vault</strong>.
+          </p>
+          <ul style="color: var(--muted); padding-left: 20px;">
+            <li><strong>24h, 48h &amp; 72h Freezer Melt Passes:</strong> Instant ad-free Frosty Freezer entry + 1.5× odometer velocity.</li>
+            <li><strong>Referral Boosts:</strong> Share your 6-character Snowman code with friends for an instant 24-hour 2× Snowfall Boost!</li>
+            <li><strong>Arctic Giving Fund:</strong> Dedicate in-app sats to Arctic Wildlife &amp; Polar Glacier conservation causes.</li>
+          </ul>
+        </div>
+        <div>
+          <img src="assets/frosty-freezer-vault.jpg" alt="The Frosty Freezer Vault Spotlight" />
+        </div>
+      </div>
+    </section>
+
+    <section id="sister" class="section">
+      <span class="pill">🐝 BEE FOUR INC. UNIVERSE</span>
+      <h2>Cross-Referenced With All 7 Sister Worlds</h2>
+      <div class="sister-grid">
+        <a class="card" style="text-decoration:none;" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoin"><img src="assets/beefourbitcoincrossover.png" alt="BeeFour Bitcoin" /><h4>BeeFour Bitcoin</h4><p>Honeycomb Miner</p></a>
+        <a class="card" style="text-decoration:none;" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta"><img src="assets/satoshisantacrossover.png" alt="Satoshi Santa" /><h4>Satoshi Santa</h4><p>North Pole Sleigh</p></a>
+        <a class="card" style="text-decoration:none;" href="https://play.google.com/store/apps/details?id=com.beefour.spookysatoshis"><img src="assets/spookysatoshicrossover.png" alt="Spooky Satoshis" /><h4>Spooky Satoshis</h4><p>Haunted Crypt</p></a>
+        <a class="card" style="text-decoration:none;" href="https://play.google.com/store/apps/details?id=com.beefour.pumpkinprotocol"><img src="assets/pumpkinprotocolcrossover.png" alt="Pumpkin Protocol" /><h4>Pumpkin Protocol</h4><p>Harvest Patch</p></a>
+        <a class="card" style="text-decoration:none;" href="https://play.google.com/store/apps/details?id=com.beefour.penguinprotocol"><img src="assets/penguinprotocolcrossover.png" alt="Penguin Protocol" /><h4>Penguin Protocol</h4><p>Glacier Colony</p></a>
+        <a class="card" style="text-decoration:none;" href="https://play.google.com/store/apps/details?id=com.beefour.manekineko"><img src="assets/manekinekocrossover.png" alt="Maneki-Neko" /><h4>Maneki-Neko</h4><p>Lucky Beckoner</p></a>
+        <a class="card" style="text-decoration:none;" href="https://play.google.com/store/apps/details?id=com.beefour.satoshicricket"><img src="assets/cricketcryptocrossover.png" alt="Satoshi Cricket" /><h4>Satoshi Cricket</h4><p>Electric Pitch</p></a>
+      </div>
+    </section>
+
+    <section id="privacy" class="section">
+      <div class="privacy-box">
+        <h2>Privacy Policy &amp; Terms of Use — Bitcoin Snowman: Sats Stacker (<code>com.beefour.bitcoinsnowman</code>)</h2>
+        <p style="color: var(--muted); font-size: 13.5px;">
+          <strong>Effective Date:</strong> November 8, 2026 · <strong>Publisher:</strong> Bee Four Inc. (<a href="mailto:support@beefourbitcoin.com" style="color:var(--gold);">support@beefourbitcoin.com</a>)
+        </p>
+        <p style="color: var(--muted); font-size: 14px;">
+          <strong>1. Entertainment Simulator Notice:</strong> <em>Bitcoin Snowman: Sats Stacker</em> is a free-to-play holiday idle game and entertainment simulation. All in-app balances ("sats", "snowballs", collectibles, and skins) are virtual in-game reward units with no cash value, are not cryptocurrency or financial instruments, and are not transferable or redeemable for real-world currency or Bitcoin.
+        </p>
+        <p style="color: var(--muted); font-size: 14px;">
+          <strong>2. Data Collection &amp; Local Storage:</strong> Gameplay progress, unlocked skins, referral codes, and collectible cards are stored locally on your device using encrypted/standard OS storage. We do not require account registration or collect personal identity documents.
+        </p>
+        <p style="color: var(--muted); font-size: 14px;">
+          <strong>3. Advertising &amp; Consent (UMP / ATT):</strong> We partner with Google AdMob and mediation networks to serve rewarded video ads and medium-rectangle (MREC) banners. Where required by law (EEA, UK, US states), we present Google’s User Messaging Platform (UMP) consent choices and honour "Privacy Options · Do Not Sell or Share My Info" directly inside the Snow Globe tab.
+        </p>
+        <p style="color: var(--muted); font-size: 14px;">
+          <strong>4. In-App Purchases &amp; Subscriptions:</strong> All optional purchases (World Skins, Golden Cosmetic Mints, Satbot Mints, Freezer Melt Passes, and the monthly TH/s Accelerator Subscription) are processed securely by Google Play Billing or Apple In-App Purchase. Subscriptions auto-renew monthly unless cancelled in your Google Play / App Store account settings at least 24 hours before the renewal date.
+        </p>
+        <p style="color: var(--muted); font-size: 14px;">
+          <strong>5. Contact &amp; Data Deletion Requests:</strong> You may reset all local app data at any time by clearing app storage or uninstalling the application, or contact us at <a href="mailto:support@beefourbitcoin.com" style="color:var(--gold);">support@beefourbitcoin.com</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      © 2026 Bee Four Inc. · Bitcoin Snowman: Sats Stacker (<code>com.beefour.bitcoinsnowman</code>) · <a href="mailto:support@beefourbitcoin.com" style="color:var(--gold);">support@beefourbitcoin.com</a>
+    </div>
+  </footer>
+
+  <script>
+    let isSummer = false;
+    function toggleTheme() {
+      isSummer = !isSummer;
+      document.body.classList.toggle('summer-theme', isSummer);
+      document.getElementById('heroBannerImg').src = isSummer ? 'assets/hero-summer.jpg' : 'assets/hero-winter.jpg';
+      document.getElementById('brandIcon').src = isSummer ? 'assets/icon-summer.png' : 'assets/icon-winter.png';
+      document.getElementById('skinToggleBtn').textContent = isSummer ? '❄️ Switch to Winter Quest' : '🏖️ Preview Summer Quest Skin';
+      document.getElementById('heroBadge').textContent = isSummer
+        ? '🏖️ SUMMER QUEST: TROPICAL BEACH WORLD SKIN ACTIVE'
+        : '⛄ THE COZIEST HOLIDAY CRYPTO IDLE SIMULATOR';
+    }
+  </script>
+</body>
+</html>
