@@ -23,5 +23,18 @@
         "52:7E:16:5C:45:64:17:15:BF:11:76:09:A3:E7:F3:E6:23:27:36:3B:86:58:E9:E4:3F:45:C8:D4:DA:AE:2F:10"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.beefour.bitcoinsnowman",
+      "sha256_cert_fingerprints": [
+        "31:F8:50:53:D4:C4:2A:E5:8F:DC:37:3D:DE:7B:42:85:20:A7:8C:F7:80:23:9E:62:18:84:AC:BF:C8:0B:05:83"
+      ]
+    }
   }
 ]
