@@ -526,19 +526,19 @@
     }
     .arcade-app-links {
       display: flex;
-      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
-    .arcade-app-links a {
+    .arcade-link-site {
       flex: 1;
       text-align: center;
-      padding: 8px 10px;
+      padding: 10px 12px;
       border-radius: 10px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 800;
       text-decoration: none;
       transition: 0.16s ease;
-    }
-    .arcade-link-site {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.14);
       color: var(--white);
@@ -547,14 +547,22 @@
       border-color: var(--app-accent);
       color: var(--app-accent);
     }
-    .arcade-link-play {
-      background: color-mix(in srgb, var(--app-accent) 18%, #12120d);
-      border: 1px solid color-mix(in srgb, var(--app-accent) 48%, transparent);
-      color: var(--white);
+    .arcade-badge-play {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.16s ease, filter 0.16s ease;
     }
-    .arcade-link-play:hover {
-      background: var(--app-accent);
-      color: #080906;
+    .arcade-badge-play:hover {
+      transform: translateY(-1px) scale(1.02);
+      filter: drop-shadow(0 6px 14px rgba(248, 200, 78, 0.25));
+    }
+    .arcade-badge-play img {
+      height: 50px;
+      width: auto;
+      display: block;
+      margin: -6px 0;
     }
     @media (max-width: 1060px) {
       .arcade-showcase-grid { grid-template-columns: repeat(2, 1fr); }
@@ -634,7 +642,7 @@
           <div>
             <div class="kicker">The Bee Four Inc. Arcade</div>
             <h2>Eight Distinct Worlds. One Satoshi Mission.</h2>
-            <p class="lead" style="margin-bottom:0;">Explore all 8 official Bee Four Inc. mobile games — each with its own world, collectible companions, and real Bitcoin odometer.</p>
+            <p class="lead" style="margin-bottom:0;">Explore all 8 official Bee Four Inc. mobile games — each with its own world, collectible companions, and real Satoshi rewards.</p>
           </div>
           <a class="btn btn-primary" href="/all/">Open Full Arcade (/all)</a>
         </div>
@@ -653,7 +661,9 @@
             </div>
             <div class="arcade-app-links">
               <a class="arcade-link-site" href="#features">Flagship Info</a>
-              <a class="arcade-link-play" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoin" target="_blank" rel="noopener">Google Play</a>
+              <a class="arcade-badge-play" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoin" target="_blank" rel="noopener" aria-label="Get BeeFour Bitcoin on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+              </a>
             </div>
           </article>
 
@@ -670,7 +680,9 @@
             </div>
             <div class="arcade-app-links">
               <a class="arcade-link-site" href="/bitcoinsnowman/">Website</a>
-              <a class="arcade-link-play" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoinsnowman" target="_blank" rel="noopener">Google Play</a>
+              <a class="arcade-badge-play" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoinsnowman" target="_blank" rel="noopener" aria-label="Get Bitcoin Snowman on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+              </a>
             </div>
           </article>
 
@@ -687,7 +699,9 @@
             </div>
             <div class="arcade-app-links">
               <a class="arcade-link-site" href="/satoshisanta/">Website</a>
-              <a class="arcade-link-play" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta" target="_blank" rel="noopener">Google Play</a>
+              <a class="arcade-badge-play" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta" target="_blank" rel="noopener" aria-label="Get Satoshi Santa on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+              </a>
             </div>
           </article>
 
@@ -704,7 +718,9 @@
             </div>
             <div class="arcade-app-links">
               <a class="arcade-link-site" href="/spookysatoshis/">Website</a>
-              <a class="arcade-link-play" href="https://play.google.com/store/apps/details?id=com.beefour.spookysatoshis" target="_blank" rel="noopener">Google Play</a>
+              <a class="arcade-badge-play" href="https://play.google.com/store/apps/details?id=com.beefour.spookysatoshis" target="_blank" rel="noopener" aria-label="Get Spooky Satoshis on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+              </a>
             </div>
           </article>
 
@@ -721,7 +737,9 @@
             </div>
             <div class="arcade-app-links">
               <a class="arcade-link-site" href="/pumpkinprotocol/">Website</a>
-              <a class="arcade-link-play" href="https://play.google.com/store/apps/details?id=com.beefour.pumpkinprotocol" target="_blank" rel="noopener">Google Play</a>
+              <a class="arcade-badge-play" href="https://play.google.com/store/apps/details?id=com.beefour.pumpkinprotocol" target="_blank" rel="noopener" aria-label="Get Pumpkin Protocol on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+              </a>
             </div>
           </article>
 
@@ -738,7 +756,9 @@
             </div>
             <div class="arcade-app-links">
               <a class="arcade-link-site" href="/penguinprotocol/">Website</a>
-              <a class="arcade-link-play" href="https://play.google.com/store/apps/details?id=com.beefour.penguinprotocol" target="_blank" rel="noopener">Google Play</a>
+              <a class="arcade-badge-play" href="https://play.google.com/store/apps/details?id=com.beefour.penguinprotocol" target="_blank" rel="noopener" aria-label="Get Penguin Protocol on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+              </a>
             </div>
           </article>
 
@@ -755,7 +775,9 @@
             </div>
             <div class="arcade-app-links">
               <a class="arcade-link-site" href="/manekineko/">Website</a>
-              <a class="arcade-link-play" href="https://play.google.com/store/apps/details?id=com.beefour.manekineko" target="_blank" rel="noopener">Google Play</a>
+              <a class="arcade-badge-play" href="https://play.google.com/store/apps/details?id=com.beefour.manekineko" target="_blank" rel="noopener" aria-label="Get Maneki-Neko Miner on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+              </a>
             </div>
           </article>
 
@@ -772,7 +794,9 @@
             </div>
             <div class="arcade-app-links">
               <a class="arcade-link-site" href="/cricket/">Website</a>
-              <a class="arcade-link-play" href="https://play.google.com/store/apps/details?id=com.beefour.cricketcrypto" target="_blank" rel="noopener">Google Play</a>
+              <a class="arcade-badge-play" href="https://play.google.com/store/apps/details?id=com.beefour.cricketcrypto" target="_blank" rel="noopener" aria-label="Get Cricket Crypto Pro on Google Play">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+              </a>
             </div>
           </article>
         </div>

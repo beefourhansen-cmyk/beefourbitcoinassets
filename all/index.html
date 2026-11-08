@@ -378,14 +378,17 @@
     }
 
     .game-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      padding-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 10px;
       border-top: 1px solid rgba(255, 255, 255, 0.07);
     }
 
     .btn-site {
+      flex: 1;
+      min-height: 46px;
       background: rgba(255, 255, 255, 0.06);
       color: var(--text);
       border: 1px solid rgba(255, 255, 255, 0.14);
@@ -396,15 +399,24 @@
       color: var(--accent);
     }
 
-    .btn-play {
-      background: color-mix(in srgb, var(--accent) 18%, #12150f);
-      color: var(--text);
-      border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+    .play-badge-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.16s ease, filter 0.16s ease;
     }
 
-    .btn-play:hover {
-      background: var(--accent);
-      color: #090a07;
+    .play-badge-link:hover {
+      transform: translateY(-1px) scale(1.02);
+      filter: drop-shadow(0 6px 16px rgba(248, 200, 78, 0.25));
+    }
+
+    .play-badge-link img {
+      height: 58px;
+      width: auto;
+      display: block;
+      margin: -6px 0;
     }
 
     /* Ecosystem Footer */
@@ -501,7 +513,7 @@
       <div class="hero-grid">
         <div>
           <h1>Eight Worlds.<br />One Satoshi Arcade.</h1>
-          <p>Every Bee Four Inc. mobile game combines a live 16-decimal Bitcoin odometer, collectible companions, verifiable in-app progression, and real Satoshi rewards you can withdraw or donate to verified causes.</p>
+          <p>Every Bee Four Inc. mobile game combines unique world-building, collectible companions, rewarding daily progression, and real Satoshi rewards you can withdraw or donate to verified causes.</p>
         </div>
         <div class="hero-stats" aria-label="Portfolio highlights">
           <div class="stat-box">
@@ -509,8 +521,8 @@
             <span>Live on Android</span>
           </div>
           <div class="stat-box">
-            <b>16-Dec</b>
-            <span>Live BTC Odometer</span>
+            <b>Collectibles</b>
+            <span>Rare Bots &amp; Traits</span>
           </div>
           <div class="stat-box">
             <b>Real Sats</b>
@@ -554,7 +566,9 @@
           </div>
           <div class="game-actions">
             <a class="btn btn-site" href="/">Explore Website</a>
-            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoin" target="_blank" rel="noopener">Google Play</a>
+            <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoin" target="_blank" rel="noopener" aria-label="Get BeeFour Bitcoin on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
           </div>
         </div>
       </article>
@@ -581,7 +595,9 @@
           </div>
           <div class="game-actions">
             <a class="btn btn-site" href="/bitcoinsnowman/">Explore Website</a>
-            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoinsnowman" target="_blank" rel="noopener">Google Play</a>
+            <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.beefour.bitcoinsnowman" target="_blank" rel="noopener" aria-label="Get Bitcoin Snowman on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
           </div>
         </div>
       </article>
@@ -600,7 +616,7 @@
           </div>
         </div>
         <div class="game-body">
-          <p class="game-desc">Wake all 12 reindeer into harness at the North Pole workshop, push the sleigh reels into Full Aurora Overdrive, and mint rare heirloom Snow Globe ornaments while stacking Satoshis.</p>
+          <p class="game-desc">Wake all 12 reindeer into harness at the North Pole workshop, push the sleigh into Full Aurora Overdrive, and mint rare heirloom Snow Globe ornaments while stacking Satoshis.</p>
           <div class="game-features">
             <span class="game-chip">12 Reindeer Fleet</span>
             <span class="game-chip">Aurora Overdrive</span>
@@ -608,7 +624,9 @@
           </div>
           <div class="game-actions">
             <a class="btn btn-site" href="/satoshisanta/">Explore Website</a>
-            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta" target="_blank" rel="noopener">Google Play</a>
+            <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.beefour.satoshisanta" target="_blank" rel="noopener" aria-label="Get Satoshi Santa on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
           </div>
         </div>
       </article>
@@ -635,7 +653,9 @@
           </div>
           <div class="game-actions">
             <a class="btn btn-site" href="/spookysatoshis/">Explore Website</a>
-            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.spookysatoshis" target="_blank" rel="noopener">Google Play</a>
+            <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.beefour.spookysatoshis" target="_blank" rel="noopener" aria-label="Get Spooky Satoshis on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
           </div>
         </div>
       </article>
@@ -662,7 +682,9 @@
           </div>
           <div class="game-actions">
             <a class="btn btn-site" href="/pumpkinprotocol/">Explore Website</a>
-            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.pumpkinprotocol" target="_blank" rel="noopener">Google Play</a>
+            <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.beefour.pumpkinprotocol" target="_blank" rel="noopener" aria-label="Get Pumpkin Protocol on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
           </div>
         </div>
       </article>
@@ -689,7 +711,9 @@
           </div>
           <div class="game-actions">
             <a class="btn btn-site" href="/penguinprotocol/">Explore Website</a>
-            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.penguinprotocol" target="_blank" rel="noopener">Google Play</a>
+            <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.beefour.penguinprotocol" target="_blank" rel="noopener" aria-label="Get Penguin Protocol on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
           </div>
         </div>
       </article>
@@ -716,7 +740,9 @@
           </div>
           <div class="game-actions">
             <a class="btn btn-site" href="/manekineko/">Explore Website</a>
-            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.manekineko" target="_blank" rel="noopener">Google Play</a>
+            <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.beefour.manekineko" target="_blank" rel="noopener" aria-label="Get Maneki-Neko Miner on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
           </div>
         </div>
       </article>
@@ -743,7 +769,9 @@
           </div>
           <div class="game-actions">
             <a class="btn btn-site" href="/cricket/">Explore Website</a>
-            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.beefour.cricketcrypto" target="_blank" rel="noopener">Google Play</a>
+            <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=com.beefour.cricketcrypto" target="_blank" rel="noopener" aria-label="Get Cricket Crypto Pro on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
           </div>
         </div>
       </article>
