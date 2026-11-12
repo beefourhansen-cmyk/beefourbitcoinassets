@@ -33,6 +33,8 @@ facebook.com, 2188116495457649, DIRECT, c3e20eee3f780d68
 fbadmanager.com, 2188116495457649, DIRECT, f223c113d09e74fb
 facebook.com, 1455901236720799, DIRECT, c3e20eee3f780d68
 fbadmanager.com, 1455901236720799, DIRECT, f223c113d09e74fb
+facebook.com, 1061871660243301, DIRECT, c3e20eee3f780d68
+fbadmanager.com, 1061871660243301, DIRECT, f223c113d09e74fb
 OwnerDomain=beefourbitcoin.com
 #Pangle
 pangleglobal.com, 5039520, DIRECT
